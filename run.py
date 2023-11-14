@@ -21,6 +21,13 @@ def welcome_function():
     '''
     Welcoming message on the entrance to the parkhouse.
     '''
-    print('Hello there and welcome to the Coders Parkhouse.\n')
+    print('\nHello there and welcome to the Coders Parkhouse.\n')
 
-welcome_function()
+
+def main():
+    '''
+    Main function of the code.
+    '''
+    welcome_function()
+
+main()
