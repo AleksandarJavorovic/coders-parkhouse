@@ -15,3 +15,12 @@ SHEET = GSPREAD_CLIENT.open('coders_parkhouse')
 business = SHEET.worksheet('business')
 
 business_data = business.get_all_values()
+
+
+def welcome_function():
+    '''
+    Welcoming message on the entrance to the parkhouse.
+    '''
+    print('Hello there and welcome to the Coders Parkhouse.\n')
+
+welcome_function()
