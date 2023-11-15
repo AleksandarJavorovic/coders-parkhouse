@@ -1,6 +1,7 @@
 import gspread
 from google.oauth2.service_account import Credentials
 import re
+import sys
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -39,7 +40,6 @@ def drivers_choice():
         driver_int = int(driver)
         if driver_int == 1:
             parking_prices()
-            print('\n\nWith that in mind, we are going to need your registration number.')
             enter_regplate()
         elif driver_int == 2:
             print('I would like to leave the parking lot')
@@ -56,11 +56,25 @@ def parking_prices():
     This function is simply presenting needed info to the
     customer, informing him of the prices and possible penalties.
     '''
-    print('\n\n\nOk, rules are following:\n')
+    print('\n\nOk, rules are following:\n')
     print('1. Each started hour means you need to pay for the whole hour.\n')
     print('2. You need to enter for how many hours you want to park.\n')
     print('3. Price per hour is 3€.\n')
     print('4. If you exceed your time, each next hour is 5€.\n')
+    print('Are you ok with it?\n')
+    print('Answer with "yes" to continue or "no" to reject.\n')
+    drivers_answer = input(': ')
+
+    try:
+        if drivers_answer == 'yes':
+            print('\n\nWith that in mind, we are going to need your registration number.')
+        elif drivers_answer == 'no':
+            print('\nfarewell_message()')
+        elif drivers_answer != 'yes' and drivers_answer != 'no':
+            print('\nPlease answer with yes or no.') 
+    except:
+        
+
 
 # Pattern of the regplates to enter
 reg_plates_pattern = '[A-Z]{2,4}[-][0-9]{3,5}[-][A-Z]{2}'
@@ -76,7 +90,7 @@ def enter_regplate():
     print('1. XY-1234-XY\n2. XY-123-XY\n3. XYZ-1234-XY\n4. XYZ-123-XY')
     print('\nXYZ representing any uppercase letter [A-Z]')
     print('\nFor the numbers section use digits [0-9]')
-    reg_plates = input('\nEnter your regplates:')
+    reg_plates = input('\nEnter your regplates: ')
     if (re.search(reg_plates_pattern, reg_plates)):
         print('valid regplates')
     else:
