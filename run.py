@@ -49,7 +49,18 @@ def drivers_choice():
     except ValueError: #handling te errors in case the answer is not an integer
         print(f'\nYou typed in: {driver}, you must choose between numbers 1 and 2.\n')
         return drivers_choice()
-        
+
+def parking_decision():
+    drivers_answer = input(': ')
+    try:
+        if drivers_answer == 'yes':
+            print('\n\nWith that in mind, we are going to need your registration number.')
+        elif drivers_answer == 'no':
+            print('\nfarewell_message()')
+        elif drivers_answer != 'yes' and drivers_answer != 'no':
+            print('\nPlease answer with yes or no.') 
+    except:
+
 
 def parking_prices():
     '''
@@ -63,17 +74,6 @@ def parking_prices():
     print('4. If you exceed your time, each next hour is 5€.\n')
     print('Are you ok with it?\n')
     print('Answer with "yes" to continue or "no" to reject.\n')
-    drivers_answer = input(': ')
-
-    try:
-        if drivers_answer == 'yes':
-            print('\n\nWith that in mind, we are going to need your registration number.')
-        elif drivers_answer == 'no':
-            print('\nfarewell_message()')
-        elif drivers_answer != 'yes' and drivers_answer != 'no':
-            print('\nPlease answer with yes or no.') 
-    except:
-        
 
 
 # Pattern of the regplates to enter
