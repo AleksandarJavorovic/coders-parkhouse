@@ -1,7 +1,6 @@
 import gspread
 from google.oauth2.service_account import Credentials
 import re
-import sys
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -40,6 +39,7 @@ def drivers_choice():
         driver_int = int(driver)
         if driver_int == 1:
             parking_prices()
+            parking_decision()
             enter_regplate()
         elif driver_int == 2:
             print('I would like to leave the parking lot')
@@ -50,30 +50,45 @@ def drivers_choice():
         print(f'\nYou typed in: {driver}, you must choose between numbers 1 and 2.\n')
         return drivers_choice()
 
-def parking_decision():
-    drivers_answer = input(': ')
-    try:
-        if drivers_answer == 'yes':
-            print('\n\nWith that in mind, we are going to need your registration number.')
-        elif drivers_answer == 'no':
-            print('\nfarewell_message()')
-        elif drivers_answer != 'yes' and drivers_answer != 'no':
-            print('\nPlease answer with yes or no.') 
-    except:
-
 
 def parking_prices():
     '''
     This function is simply presenting needed info to the
     customer, informing him of the prices and possible penalties.
     '''
-    print('\n\nOk, rules are following:\n')
+    print('\nOk, rules are following:\n')
     print('1. Each started hour means you need to pay for the whole hour.\n')
     print('2. You need to enter for how many hours you want to park.\n')
     print('3. Price per hour is 3€.\n')
     print('4. If you exceed your time, each next hour is 5€.\n')
     print('Are you ok with it?\n')
     print('Answer with "yes" to continue or "no" to reject.\n')
+
+
+def parking_decision():
+    '''
+    Function which alows driver to accept the terms of the parking lot
+    or to refuse them and leave before parking.
+    '''
+    drivers_answer = input(': ')
+    drivers_answer_lower = drivers_answer.lower()
+    try:
+        if drivers_answer_lower == 'yes':
+            print('\n\nWith that in mind, we are going to need your registration number.')
+        elif drivers_answer_lower == 'no':
+            farewell_message()
+        elif drivers_answer_lower != 'yes' and drivers_answer_lower != 'no':
+            print('\nPlease answer with yes or no.\n') 
+            parking_decision()
+    except:
+        quit()
+
+def farewell_message():
+    '''
+    Function which prints out farewell message and exits the program
+    '''
+    print('\nHave a nice day! Until the next time! :)\n')
+    quit()
 
 
 # Pattern of the regplates to enter
@@ -91,7 +106,7 @@ def enter_regplate():
     print('\nXYZ representing any uppercase letter [A-Z]')
     print('\nFor the numbers section use digits [0-9]')
     reg_plates = input('\nEnter your regplates: ')
-    if (re.search(reg_plates_pattern, reg_plates)):
+    if (re.search(reg_plates_pattern, reg_plates)):# Line validating the registration number
         print('valid regplates')
     else:
         print(f'\nYou typed in: {reg_plates}')
