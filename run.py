@@ -95,20 +95,39 @@ def farewell_message():
 # Pattern of the regplates to enter
 reg_plates_pattern = '[A-Z]{2,4}[-][0-9]{3,5}[-][A-Z]{2}'
 
+# Pattern for parking duration
+initial_time_pattern = '^\\d+$'
+
+# Pattern for testing
+
+test_pattern = '[a-zA-Z]'
+
+
 # List to contain driver's details
 driver_details = []
 
 
 def initial_time_function():
     '''
-    Function to set initial duration to parking
+    Function to set initial duration of parking
     '''
     print('For how long are you planing to park?\n')
+    print('Minimal number of hours is 1.\n')
     initial_time = input('Number of hours: ')
-    driver_details.insert(1, initial_time)
-    print('\nTry not to be late, otherwise it will be more expensive.')
-    print('\nYour parking details are:\n')
-    print(driver_details)
+    try:
+        if int(initial_time) == 0:
+            print('\nZero is not an option, sorry.\n')
+            initial_time_function()
+        elif (re.search(initial_time_pattern, initial_time)) and int(initial_time) > 0:
+            driver_details.insert(1, initial_time) # adding initial_time to the list
+            print('\nVery well!')
+            print('\nTry not to be late, otherwise it will be more expensive.')
+            print('\nYour parking details are:\n')
+            print(driver_details)
+    except ValueError:
+        print('\nUse only didigts 0-9, only whole numbers please.\n')
+        initial_time_function()
+    
 
 
 
@@ -125,9 +144,8 @@ def enter_regplate():
     print('\nDon\'t forget dashes where needed.')
     reg_plates = input('\nEnter registration number: ')
     if (re.search(reg_plates_pattern, reg_plates)):# Line validating the registration number
-        print('\nRegistration number is valid!\n')
-        driver_details.insert(0, reg_plates)
-        print(driver_details)
+        print('\n\nRegistration number is valid!\n')
+        driver_details.insert(0, reg_plates) # adding reg_plates to the list
     else:
         print('\nSorry, that doesn\'t look like any of the patterns provided.')
         return enter_regplate()
