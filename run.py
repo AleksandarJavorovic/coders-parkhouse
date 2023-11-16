@@ -41,6 +41,7 @@ def drivers_choice():
             parking_prices()
             parking_decision()
             enter_regplate()
+            initial_time_function()
         elif driver_int == 2:
             print('I would like to leave the parking lot')
         elif driver_int != 1 and driver_int != 2:
@@ -96,6 +97,19 @@ reg_plates_pattern = '[A-Z]{2,4}[-][0-9]{3,5}[-][A-Z]{2}'
 
 # List to contain driver's details
 driver_details = []
+
+
+def initial_time_function():
+    '''
+    Function to set initial duration to parking
+    '''
+    print('For how long are you planing to park?\n')
+    initial_time = input('Number of hours: ')
+    driver_details.insert(1, initial_time)
+    print('\nTry not to be late, otherwise it will be more expensive.')
+    print('\nYour parking details are:\n')
+    print(driver_details)
+
 
 
 def enter_regplate():
