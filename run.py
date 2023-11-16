@@ -94,6 +94,9 @@ def farewell_message():
 # Pattern of the regplates to enter
 reg_plates_pattern = '[A-Z]{2,4}[-][0-9]{3,5}[-][A-Z]{2}'
 
+# List to contain driver's details
+driver_details = []
+
 
 def enter_regplate():
     '''
@@ -109,6 +112,8 @@ def enter_regplate():
     reg_plates = input('\nEnter registration number: ')
     if (re.search(reg_plates_pattern, reg_plates)):# Line validating the registration number
         print('\nRegistration number is valid!\n')
+        driver_details.insert(0, reg_plates)
+        print(driver_details)
     else:
         print('\nSorry, that doesn\'t look like any of the patterns provided.')
         return enter_regplate()
