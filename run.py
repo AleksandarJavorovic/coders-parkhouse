@@ -56,7 +56,7 @@ def parking_prices():
     This function is simply presenting needed info to the
     customer, informing him of the prices and possible penalties.
     '''
-    print('\nOk, rules are following:\n')
+    print('\n\nOk, rules are following:\n')
     print('1. Each started hour means you need to pay for the whole hour.\n')
     print('2. You need to enter for how many hours you want to park.\n')
     print('3. Price per hour is 3€.\n')
@@ -78,7 +78,7 @@ def parking_decision():
         elif drivers_answer_lower == 'no':
             farewell_message()
         elif drivers_answer_lower != 'yes' and drivers_answer_lower != 'no':
-            print('\nPlease answer with yes or no.\n') 
+            print('\nPlease answer with "yes" or "no".\n') 
             parking_decision()
     except:
         quit()
@@ -103,17 +103,15 @@ def enter_regplate():
     reg_plates = ''
     print('\nPlese use one of the following patterns:\n')
     print('1. XY-1234-XY\n2. XY-123-XY\n3. XYZ-1234-XY\n4. XYZ-123-XY')
-    print('\nXYZ representing any uppercase letter [A-Z]')
-    print('\nFor the numbers section use digits [0-9]')
-    reg_plates = input('\nEnter your regplates: ')
+    print('\nX,Y,Z representing any UPPERCASE letter [A-Z].')
+    print('\nFor the numbers section use digits [0-9].')
+    print('\nDon\'t forget dashes where needed.')
+    reg_plates = input('\nEnter registration number: ')
     if (re.search(reg_plates_pattern, reg_plates)):# Line validating the registration number
-        print('valid regplates')
+        print('\nRegistration number is valid!\n')
     else:
-        print(f'\nYou typed in: {reg_plates}')
-        print('\nSorry, that doesn\'t look like one of the patterns provided.')
+        print('\nSorry, that doesn\'t look like any of the patterns provided.')
         return enter_regplate()
-
-
 
 
 def main():
