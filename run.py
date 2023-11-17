@@ -62,11 +62,11 @@ def parking_prices():
     customer, informing him of the prices and possible penalties.
     '''
     print('\n\nOk, rules are following:\n')
-    print('1. Each started hour means you need to pay for the whole hour.\n')
-    print('2. You need to enter for how many hours you want to park.\n')
-    print('3. Price per hour is 3€.\n')
-    print('4. If you exceed your time, each next hour is 5€.\n')
-    print('Are you ok with it?\n')
+    print('1. Each started hour means you need to pay for the whole hour.')
+    print('2. You need to enter for how many hours you want to park.')
+    print('3. Price per hour is 3€.')
+    print('4. If you exceed your time, each next hour is 5€.')
+    print('Are you ok with it?')
     print('Answer with "yes" to continue or "no" to reject.\n')
 
 
@@ -148,11 +148,11 @@ def enter_regplate():
     one of the already defined patterns.
     '''
     reg_plates = ''
-    print('\nPlese use one of the following patterns:\n')
+    print('\nPlease use one of the following patterns:')
     print('1. XY-1234-XY\n2. XY-123-XY\n3. XYZ-1234-XY\n4. XYZ-123-XY')
     print('\nX,Y,Z representing any UPPERCASE letter [A-Z].')
-    print('\nFor the numbers section use digits [0-9].')
-    print('\nDon\'t forget dashes where needed.')
+    print('For the numbers section use digits [0-9].')
+    print('Don\'t forget dashes where needed.')
     reg_plates = input('\nEnter registration number: ')
     if (re.search(reg_plates_pattern, reg_plates)):# Line validating the registration number
         print('\n\nRegistration number is valid!\n')
