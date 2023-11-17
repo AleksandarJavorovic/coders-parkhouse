@@ -98,6 +98,9 @@ reg_plates_pattern = '[A-Z]{2,4}[-][0-9]{3,5}[-][A-Z]{2}'
 # Pattern for parking duration
 initial_time_pattern = '^\\d+$'
 
+# Pattern for plus and minus sign
+plus_minus_pattern = '^[+]+$'
+
 # List to contain driver's details
 driver_details = []
 
@@ -119,8 +122,11 @@ def initial_time_function():
             print('\nTry not to be late, otherwise it will be more expensive.')
             print('\nYour parking details are:\n')
             print(driver_details)
+        elif (re.findall("[+-]", initial_time)): # insuring there are no +/- prefixes
+            print('\nDon\'t use plus/minus signs as prefix.\n')
+            initial_time_function()
     except ValueError: # handling invalid inputs
-        print('\nUse only didigts 0-9, only whole numbers please.\n')
+        print('\nUse only didigts 0-9, only whole numbers please and no special signs.\n')
         initial_time_function()
     
 
