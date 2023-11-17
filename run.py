@@ -46,6 +46,7 @@ def drivers_choice():
             parking_decision()
             enter_regplate()
             initial_time_function()
+            initial_price_calculation()
         elif driver_int == 2:
             print('I would like to leave the parking lot')
         elif driver_int != 1 and driver_int != 2:
@@ -125,7 +126,7 @@ def initial_time_function():
             print('\nVery well!')
             print('\nTry not to be late, otherwise it will be more expensive.')
             print('\nYour parking details are:\n')
-            print(driver_details)
+            
         elif (re.findall("[+-]", initial_time)): # insuring there are no +/- prefixes
             print('\nDon\'t use plus/minus signs as prefix.\n')
             initial_time_function()
@@ -139,7 +140,9 @@ def initial_price_calculation():
     Function to calculate initial price of the parking
     according to the inital parking time.
     '''
-    
+    initial_price = str(int(driver_details[1]) * 3)
+    driver_details.insert(2, initial_price)
+    print(driver_details)
 
 
 def enter_regplate():
