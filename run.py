@@ -43,10 +43,6 @@ def drivers_choice():
             drivers_choice()
         elif driver_int == 1:
             parking_prices()
-            parking_decision()
-            enter_regplate()
-            initial_time_function()
-            initial_price_calculation()
         elif driver_int == 2:
             print('I would like to leave the parking lot')
         elif driver_int != 1 and driver_int != 2:
@@ -171,6 +167,9 @@ def main():
     '''
     welcome_function()
     drivers_choice()
-    
+    parking_decision()
+    enter_regplate()
+    initial_time_function()
+    initial_price_calculation()
 
 main()
