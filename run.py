@@ -98,11 +98,6 @@ reg_plates_pattern = '[A-Z]{2,4}[-][0-9]{3,5}[-][A-Z]{2}'
 # Pattern for parking duration
 initial_time_pattern = '^\\d+$'
 
-# Pattern for testing
-
-test_pattern = '[a-zA-Z]'
-
-
 # List to contain driver's details
 driver_details = []
 
@@ -111,7 +106,7 @@ def initial_time_function():
     '''
     Function to set initial duration of parking
     '''
-    print('For how long are you planing to park?\n')
+    print('For how long are you planning to park?\n')
     print('Minimal number of hours is 1.\n')
     initial_time = input('Number of hours: ')
     try:
@@ -124,11 +119,17 @@ def initial_time_function():
             print('\nTry not to be late, otherwise it will be more expensive.')
             print('\nYour parking details are:\n')
             print(driver_details)
-    except ValueError:
+    except ValueError: # handling invalid inputs
         print('\nUse only didigts 0-9, only whole numbers please.\n')
         initial_time_function()
     
 
+def initial_price_calculation():
+    '''
+    Function to calculate initial price of the parking
+    according to the inital parking time.
+    '''
+    
 
 
 def enter_regplate():
