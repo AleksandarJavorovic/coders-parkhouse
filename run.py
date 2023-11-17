@@ -37,7 +37,11 @@ def drivers_choice():
     try:
         driver = input('Please enter 1 or 2: ')
         driver_int = int(driver)
-        if driver_int == 1:
+
+        if (re.findall("[+]", driver)):
+            print('\nDon\'t use prefix plus.\n')
+            drivers_choice()
+        elif driver_int == 1:
             parking_prices()
             parking_decision()
             enter_regplate()
@@ -46,10 +50,10 @@ def drivers_choice():
             print('I would like to leave the parking lot')
         elif driver_int != 1 and driver_int != 2:
             print(f'\nYou typed in: {driver_int}, that\'s not an option try again.\n')
-            return drivers_choice()
+            drivers_choice()
     except ValueError: #handling te errors in case the answer is not an integer
         print(f'\nYou typed in: {driver}, you must choose between numbers 1 and 2.\n')
-        return drivers_choice()
+        drivers_choice()
 
 
 def parking_prices():
