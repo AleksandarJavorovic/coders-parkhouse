@@ -17,14 +17,8 @@ business = SHEET.worksheet('business')
 
 business_data = business.get_all_values()
 
-
-def welcome_function():
-    '''
-    Welcoming message on the entrance to the parkhouse.
-    '''
-    print('\nHello there and welcome to the Coders Parkhouse.\n')
-
 driver = ''
+
 
 def parking_prices():
     '''
@@ -57,6 +51,7 @@ def parking_decision():
             parking_decision()
     except:
         quit()
+
 
 def farewell_message():
     '''
@@ -163,8 +158,6 @@ def enter_regplate():
         return enter_regplate()
 
 
-welcome_function()
-
 def drivers_choice():
     '''
     Function which offers 2 choices for the driver.
@@ -172,6 +165,7 @@ def drivers_choice():
     Function also handles possible errors and returns
     the driver to chose between 1 and 2.
     '''
+    print('\nHello there and welcome to the Coders Parkhouse.\n')
     print('What would you like to do?\n1. Park the car\n2. Leave the parking lot\n')
     try:
         driver = input('Please enter 1 or 2: ')
