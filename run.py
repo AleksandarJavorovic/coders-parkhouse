@@ -26,33 +26,6 @@ def welcome_function():
 
 driver = ''
 
-def drivers_choice():
-    '''
-    Function which offers 2 choices for the driver.
-    Driver can park or leave the parking lot.
-    Function also handles possible errors and returns
-    the driver to chose between 1 and 2.
-    '''
-    print('What would you like to do?\n1. Park the car\n2. Leave the parking lot\n')
-    try:
-        driver = input('Please enter 1 or 2: ')
-        driver_int = int(driver)
-
-        if (re.findall("[+]", driver)):
-            print('\nDon\'t use prefix plus.\n')
-            drivers_choice()
-        elif driver_int == 1:
-            parking_prices() # calling list of the rules and prices
-        elif driver_int == 2:
-            print('I would like to leave the parking lot')
-        elif driver_int != 1 and driver_int != 2:
-            print(f'\nYou typed in: {driver_int}, that\'s not an option try again.\n')
-            drivers_choice()
-    except ValueError: #handling te errors in case the answer is not an integer
-        print(f'\nYou typed in: {driver}, you must choose between numbers 1 and 2.\n')
-        drivers_choice()
-
-
 def parking_prices():
     '''
     This function is simply presenting needed info to the
@@ -87,25 +60,25 @@ def parking_decision():
 
 def farewell_message():
     '''
-    Function which prints out farewell message and exits the program
+    Function which prints out farewell message and exits the program.
     '''
     print('\nHave a nice day! Until the next time! :)\n')
     quit()
 
 
-# Pattern of the regplates to enter
+# Pattern of the regplates to enter.
 reg_plates_pattern = '[A-Z]{2,4}[-][0-9]{3,5}[-][A-Z]{2}'
 
-# Pattern for parking duration
+# Pattern for parking duration.
 initial_time_pattern = '^\\d+$'
 
-# Pattern for plus and minus sign
+# Pattern for plus and minus sign.
 plus_minus_pattern = '^[+]+$'
 
-# List to contain driver's details
+# List to contain driver's details.
 driver_details = []
 
-# List to help present information to the driver
+# List to help present information to the driver.
 
 parking_info = ['Registration','Number of hours', 'Initial cost in €']
 
@@ -120,7 +93,7 @@ def parking_info_presentation():
 
 def initial_time_function():
     '''
-    Function to set initial duration of parking
+    Function to set initial duration of parking.
     '''
     print('For how long are you planning to park?\n')
     print('Minimal number of hours is 1.\n')
@@ -148,7 +121,7 @@ def initial_price_calculation():
     Function to calculate initial price of the parking
     according to the inital parking time.
     '''
-    initial_price = str(int(driver_details[1]) * 3) # calculating initial price
+    initial_price = str(int(driver_details[1]) * 3) # Calculating initial price.
     driver_details.insert(2, initial_price)
 
 
@@ -161,7 +134,7 @@ def return_to_parkinglot():
     print('If you aren\'t ready to pick up your car yet, type in "not yet".')
     driver_returns = input(': ')
     if driver_returns == 'return':
-        main()
+        drivers_choice() # Starting the program again.
     elif driver_returns == 'not yet':
         print('\nOk, see ya later!\n')
         quit()
@@ -182,25 +155,46 @@ def enter_regplate():
     print('For the numbers section use digits [0-9].')
     print('Don\'t forget dashes where needed.')
     reg_plates = input('\nEnter registration number: ')
-    if (re.search(reg_plates_pattern, reg_plates)):# Line validating the registration number
+    if (re.search(reg_plates_pattern, reg_plates)):# Line validating the registration number.
         print('\n\nRegistration number is valid!\n')
-        driver_details.insert(0, reg_plates) # adding reg_plates to the list
+        driver_details.insert(0, reg_plates) # Adding reg_plates to the list.
     else:
         print('\nSorry, that doesn\'t look like any of the patterns provided.')
         return enter_regplate()
 
 
-def main():
-    '''
-    Main function of the code. It hosts the other functions.
-    '''
-    welcome_function()
-    drivers_choice()
-    parking_decision()
-    enter_regplate()
-    initial_time_function()
-    initial_price_calculation()
-    parking_info_presentation()
-    return_to_parkinglot()
+welcome_function()
 
-main()
+def drivers_choice():
+    '''
+    Function which offers 2 choices for the driver.
+    Driver can park or leave the parking lot.
+    Function also handles possible errors and returns
+    the driver to chose between 1 and 2.
+    '''
+    print('What would you like to do?\n1. Park the car\n2. Leave the parking lot\n')
+    try:
+        driver = input('Please enter 1 or 2: ')
+        driver_int = int(driver)
+
+        if (re.findall("[+]", driver)):
+            print('\nDon\'t use prefix plus.\n')
+            drivers_choice()
+        elif driver_int == 1:
+            parking_prices() # Calling list of the rules and prices.
+            parking_decision()
+            enter_regplate()
+            initial_time_function()
+            initial_price_calculation()
+            parking_info_presentation()
+            return_to_parkinglot()
+        elif driver_int == 2:
+            print('I would like to leave the parking lot')
+        elif driver_int != 1 and driver_int != 2:
+            print(f'\nYou typed in: {driver_int}, that\'s not an option try again.\n')
+            drivers_choice()
+    except ValueError: # Handling te errors in case the answer is not an integer.
+        print(f'\nYou typed in: {driver}, you must choose between numbers 1 and 2.\n')
+        drivers_choice()
+
+drivers_choice()
