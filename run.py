@@ -42,7 +42,7 @@ def drivers_choice():
             print('\nDon\'t use prefix plus.\n')
             drivers_choice()
         elif driver_int == 1:
-            parking_prices()
+            parking_prices() # calling list of the rules and prices
         elif driver_int == 2:
             print('I would like to leave the parking lot')
         elif driver_int != 1 and driver_int != 2:
@@ -105,6 +105,18 @@ plus_minus_pattern = '^[+]+$'
 # List to contain driver's details
 driver_details = []
 
+# List to help present information to the driver
+
+parking_info = ['Registration','Number of hours', 'Initial cost in €']
+
+def parking_info_presentation():
+    '''
+    Function to present info to the driver.
+    Registration number, duration and price.
+    '''
+    driver_details_display = {parking_info[i]: driver_details[i] for i in range(len(parking_info))}
+    print(driver_details_display)
+
 
 def initial_time_function():
     '''
@@ -136,9 +148,26 @@ def initial_price_calculation():
     Function to calculate initial price of the parking
     according to the inital parking time.
     '''
-    initial_price = str(int(driver_details[1]) * 3)
+    initial_price = str(int(driver_details[1]) * 3) # calculating initial price
     driver_details.insert(2, initial_price)
-    print(driver_details)
+
+
+def return_to_parkinglot():
+    '''
+    Function which brings the driver to the entrance of the parking lot again.
+    '''
+    print('\nWhen you have finished what you had to finish.')
+    print('Type in "return", to return to the parking lot to pick up your car.')
+    print('If you aren\'t ready to pick up your car yet, type in "not yet".')
+    driver_returns = input(': ')
+    if driver_returns == 'return':
+        main()
+    elif driver_returns == 'not yet':
+        print('\nOk, see ya later!\n')
+        quit()
+    else:
+        print('\nPlease use one of the options described before:\n"return" or "not yet" to leave.')
+        return_to_parkinglot()
 
 
 def enter_regplate():
@@ -171,5 +200,7 @@ def main():
     enter_regplate()
     initial_time_function()
     initial_price_calculation()
+    parking_info_presentation()
+    return_to_parkinglot()
 
 main()
