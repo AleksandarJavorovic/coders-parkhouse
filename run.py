@@ -51,7 +51,7 @@ def parking_decision():
     Function which alows driver to accept the terms of the parking lot
     or to refuse them and leave before parking.
     '''
-    drivers_answer = input(': ')
+    drivers_answer = input(':\n')
     drivers_answer_lower = drivers_answer.lower()
     try:
         if drivers_answer_lower == 'yes':
@@ -88,7 +88,7 @@ def initial_time_function():
     '''
     print('For how long are you planning to park?\n')
     print('Minimal number of hours is 1.\n')
-    initial_time = input('Number of hours: ')
+    initial_time = input('Number of hours:\n')
     try:
         if int(initial_time) == 0:
             print('\nZero is not an option, sorry.\n')
@@ -130,7 +130,7 @@ def return_to_parkinglot():
     '''
     print('\n\nType in "RETURN", to return to the parking lot to pick up your car.')
     print('If you aren\'t ready to pick up your car yet, type in "NOT YET".')
-    driver_returns = input(': ')
+    driver_returns = input(':\n')
     if driver_returns.upper() == 'RETURN':
         drivers_choice() # Starting the program again.
     elif driver_returns.upper() == 'NOT YET':
@@ -153,7 +153,7 @@ def enter_regplate():
     print('For the numbers section use digits [0-9].')
     print('Don\'t forget dashes where needed.')
     existing_regplates = business.col_values(1) # List of registration numbers within the sheet
-    reg_plates = input('\nEnter registration number: ')
+    reg_plates = input('\nEnter registration number:\n')
     if reg_plates not in existing_regplates:# checking the list of existing reg. numbers
         if (re.search(reg_plates_pattern, reg_plates)):# Line validating the registration pattern.
             print('\n\nRegistration number is valid!\n')
@@ -173,7 +173,7 @@ def reg_check():
     Function to run when registration is already existing
     '''
     print('To pay your bill type in "proceed".\nTo enter new reg-number type in "new".')
-    reg_plate_check = input(': ')
+    reg_plate_check = input(':\n')
     if reg_plate_check == 'proceed':
         print('I want to pay my bill!')
         quit()
@@ -195,7 +195,7 @@ def drivers_choice():
     print('\nHello there and welcome to the Coders Parkhouse.\n')
     print('What would you like to do?\n1. Park the car\n2. Leave the parking lot\n')
     try:
-        driver = input('Please enter 1 or 2: ')
+        driver = input('Please enter 1 or 2:\n')
         driver_int = int(driver)
 
         if (re.findall("[+]", driver)):
