@@ -172,7 +172,6 @@ def reg_check():
     '''
     Function to run when registration is already existing
     '''
-    print('\nWrong input!')
     print('To pay your bill type in "proceed".\nTo enter new reg-number type in "new".')
     reg_plate_check = input(': ')
     if reg_plate_check == 'proceed':
@@ -181,6 +180,7 @@ def reg_check():
     elif reg_plate_check == 'new':
         enter_regplate()
     else:
+        print('\nInvalid input!')
         reg_check()
 
 
