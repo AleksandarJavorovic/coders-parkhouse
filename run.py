@@ -20,9 +20,6 @@ business_data = business.get_all_values()
 # Pattern of the regplates to enter.
 reg_plates_pattern = '[A-Z]{2,4}[-][0-9]{3,5}[-][A-Z]{2}'
 
-# List of registration numbers within the sheet
-existing_regplates = business.col_values(1)
-
 # Pattern for parking duration.
 initial_time_pattern = '^\\d+$'
 
@@ -119,6 +116,13 @@ def initial_price_calculation():
     driver_details.insert(2, initial_price)
 
 
+def save_driver_detials():
+    '''
+    Function to save parking info to the google sheet.
+    '''
+    business.append_row(driver_details)
+
+
 def return_to_parkinglot():
     '''
     Function which brings the driver to the entrance
@@ -148,6 +152,7 @@ def enter_regplate():
     print('\nX,Y,Z representing any UPPERCASE letter [A-Z].')
     print('For the numbers section use digits [0-9].')
     print('Don\'t forget dashes where needed.')
+    existing_regplates = business.col_values(1) # List of registration numbers within the sheet
     reg_plates = input('\nEnter registration number: ')
     if reg_plates not in existing_regplates:# checking the list of existing reg. numbers
         if (re.search(reg_plates_pattern, reg_plates)):# Line validating the registration pattern.
@@ -203,6 +208,7 @@ def drivers_choice():
             initial_time_function()
             initial_price_calculation()
             parking_info_presentation()
+            save_driver_detials()
             return_to_parkinglot()
         elif driver_int == 2:
             print('I would like to leave the parking lot')
