@@ -13,11 +13,27 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('coders_parkhouse')
 
-business = SHEET.worksheet('business')
+business = SHEET.worksheet('business') 
 
 business_data = business.get_all_values()
 
-driver = ''
+# Pattern of the regplates to enter.
+reg_plates_pattern = '[A-Z]{2,4}[-][0-9]{3,5}[-][A-Z]{2}'
+
+# List of registration numbers within the sheet
+existing_regplates = business.col_values(1)
+
+# Pattern for parking duration.
+initial_time_pattern = '^\\d+$'
+
+# Pattern for plus sign.
+plus_minus_pattern = '^[+]+$'
+
+# List to contain driver's details.
+driver_details = []
+
+# List to help present information to the driver.
+parking_info = ['Registration','Number of hours', 'Initial cost in €']
 
 def parking_prices():
     '''
@@ -59,25 +75,6 @@ def farewell_message():
     print('\nHave a nice day! Until the next time! :)\n')
     quit()
 
-
-# Pattern of the regplates to enter.
-reg_plates_pattern = '[A-Z]{2,4}[-][0-9]{3,5}[-][A-Z]{2}'
-
-# List of registration numbers within the sheet
-existing_regplates = business.col_values(1)
-
-# Pattern for parking duration.
-initial_time_pattern = '^\\d+$'
-
-# Pattern for plus and minus sign.
-plus_minus_pattern = '^[+]+$'
-
-# List to contain driver's details.
-driver_details = []
-
-# List to help present information to the driver.
-
-parking_info = ['Registration','Number of hours', 'Initial cost in €']
 
 def parking_info_presentation():
     '''
@@ -124,9 +121,10 @@ def initial_price_calculation():
 
 def return_to_parkinglot():
     '''
-    Function which brings the driver to the entrance of the parking lot again.
+    Function which brings the driver to the entrance
+    of the parking lot again or lets him leave.
     '''
-    print('Type in "RETURN", to return to the parking lot to pick up your car.')
+    print('\n\nType in "RETURN", to return to the parking lot to pick up your car.')
     print('If you aren\'t ready to pick up your car yet, type in "NOT YET".')
     driver_returns = input(': ')
     if driver_returns.upper() == 'RETURN':
