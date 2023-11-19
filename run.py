@@ -19,7 +19,6 @@ business_data = business.get_all_values()
 
 driver = ''
 
-
 def parking_prices():
     '''
     This function is simply presenting needed info to the
@@ -63,6 +62,9 @@ def farewell_message():
 
 # Pattern of the regplates to enter.
 reg_plates_pattern = '[A-Z]{2,4}[-][0-9]{3,5}[-][A-Z]{2}'
+
+# List of registration numbers within the sheet
+existing_regplates = business.col_values(1)
 
 # Pattern for parking duration.
 initial_time_pattern = '^\\d+$'
@@ -150,12 +152,24 @@ def enter_regplate():
     print('For the numbers section use digits [0-9].')
     print('Don\'t forget dashes where needed.')
     reg_plates = input('\nEnter registration number: ')
-    if (re.search(reg_plates_pattern, reg_plates)):# Line validating the registration number.
-        print('\n\nRegistration number is valid!\n')
-        driver_details.insert(0, reg_plates) # Adding reg_plates to the list.
+    if reg_plates not in existing_regplates:# checking the list of existing reg. numbers
+        if (re.search(reg_plates_pattern, reg_plates)):# Line validating the registration pattern.
+            print('\n\nRegistration number is valid!\n')
+            driver_details.insert(0, reg_plates) # Adding reg_plates to the list.
+        else:
+            print('\nSorry, that doesn\'t look like any of the patterns provided.')
+            return enter_regplate()
     else:
-        print('\nSorry, that doesn\'t look like any of the patterns provided.')
-        return enter_regplate()
+        print('\nRegistration number is already in our system!\n')
+        print('You either have to pay for your parking time')
+        print('or enter your reg. number again if you made a mistake.')
+        print('To pay your bill type in "proceed".\nTo enter new number type in "new".')
+        reg_plate_check = input(': ')
+        if reg_plate_check == 'proceed':
+            print('I want to pay my bill!')
+        elif reg_plate_check == 'new':
+            enter_regplate()
+
 
 
 def drivers_choice():
