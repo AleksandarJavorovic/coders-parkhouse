@@ -162,13 +162,24 @@ def enter_regplate():
     else:
         print('\nRegistration number is already in our system!\n')
         print('You either have to pay for your parking time')
-        print('or enter your reg. number again if you made a mistake.')
-        print('To pay your bill type in "proceed".\nTo enter new number type in "new".')
-        reg_plate_check = input(': ')
-        if reg_plate_check == 'proceed':
-            print('I want to pay my bill!')
-        elif reg_plate_check == 'new':
-            enter_regplate()
+        print('or re-enter your reg. number if you made a mistake.')
+        reg_check()
+
+
+def reg_check():
+    '''
+    Function to run when registration is already existing
+    '''
+    print('\nWrong input!')
+    print('To pay your bill type in "proceed".\nTo enter new reg-number type in "new".')
+    reg_plate_check = input(': ')
+    if reg_plate_check == 'proceed':
+        print('I want to pay my bill!')
+        quit()
+    elif reg_plate_check == 'new':
+        enter_regplate()
+    else:
+        reg_check()
 
 
 
