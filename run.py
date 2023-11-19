@@ -126,17 +126,16 @@ def return_to_parkinglot():
     '''
     Function which brings the driver to the entrance of the parking lot again.
     '''
-    print('\nWhen you have finished what you had to finish.')
-    print('Type in "return", to return to the parking lot to pick up your car.')
-    print('If you aren\'t ready to pick up your car yet, type in "not yet".')
+    print('Type in "RETURN", to return to the parking lot to pick up your car.')
+    print('If you aren\'t ready to pick up your car yet, type in "NOT YET".')
     driver_returns = input(': ')
-    if driver_returns == 'return':
+    if driver_returns.upper() == 'RETURN':
         drivers_choice() # Starting the program again.
-    elif driver_returns == 'not yet':
+    elif driver_returns.upper() == 'NOT YET':
         print('\nOk, see ya later!\n')
         quit()
     else:
-        print('\nPlease use one of the options described before:\n"return" or "not yet" to leave.')
+        print('\nInvalid input.\n')
         return_to_parkinglot()
 
 
