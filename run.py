@@ -28,7 +28,7 @@ plus_minus_pattern = '^[+]+$'
 driver_details = []
 
 # List to help present information to the driver.
-parking_info = ['Registration','Number of hours', 'Initial cost in €']
+parking_info = ['Registration','Hours', 'Price in €']
 
 def parking_prices():
     '''
@@ -36,12 +36,11 @@ def parking_prices():
     customer, informing him of the prices and possible penalties.
     '''
     print('\n\nOk, rules are following:\n')
-    print('1. Each started hour means you need to pay for the whole hour.')
-    print('2. You need to enter for how many hours you want to park.')
-    print('3. Price per hour is 3€.')
-    print('4. If you exceed your time, each next hour is 5€.')
+    print('1. You need to enter for how many hours you want to park.')
+    print('2. Price per hour is 3€.')
+    print('3. If you exceed your time, penaltie fee of 10€ will be applied.')
     print('Are you ok with it?')
-    print('Answer with "yes" to continue or "no" to reject.\n')
+    print('Answer with "yes" to continue or "no" to reject.')
 
 
 def parking_decision():
