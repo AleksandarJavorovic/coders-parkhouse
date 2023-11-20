@@ -198,21 +198,27 @@ def enter_regplate_leave():
             print('Are you sure that you parked here?')
             print('1. "Yes" I am sure(type in your reg. number again)')
             print('2. "No", looks like I made a mistake. o.O')
-            print('Yes or no please.')
-            drivers_answer = input('\n:')
-            drivers_answer_lower = drivers_answer.lower()
-            if drivers_answer_lower == 'yes':
-                enter_regplate_leave()
-            elif drivers_answer_lower == 'no':
-                farewell_message()
-            elif drivers_answer_lower != 'yes' and drivers_answer_lower != 'no':
-                print('\nPlease answer with "yes" or "no".\n') 
-                
+            reg_check_two()          
     else:
         print('\nInvalid data, please use correct pattern.')
         enter_regplate_leave()
 
-   
+
+def reg_check_two():
+    '''
+    Recursive function in case user doens't answer
+    with yes or no.
+    '''
+    print('Yes or no please.')
+    drivers_answer = input('\n:')
+    drivers_answer_lower = drivers_answer.lower()
+    if drivers_answer_lower == 'yes':
+        enter_regplate_leave()
+    elif drivers_answer_lower == 'no':
+        farewell_message()
+    elif drivers_answer_lower != 'yes' and drivers_answer_lower != 'no':
+        print('\nPlease answer with "yes" or "no".\n')
+        reg_check_two()
 
 
 
