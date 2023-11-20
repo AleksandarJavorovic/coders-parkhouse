@@ -75,6 +75,7 @@ def parking_info_presentation(data):
     '''
     Function to present info to the driver.
     Registration number, duration and price.
+    Creating dict. out of 2 lists.
     '''
     driver_details_display = {parking_info[i]: data[i] for i in range(len(parking_info))}
     print(driver_details_display)
@@ -192,7 +193,7 @@ def enter_regplate_leave():
     reg_plates = input('\n: ')
     if (re.search(reg_plates_pattern, reg_plates)):
         if reg_plates in existing_regplates:
-            print('\nOk, here are your details:\n') # here to add
+            print('\nDetails loading...\n')
             request_list(reg_plates)
         elif reg_plates not in existing_regplates:
             print('\nRegistration number is valid but not in our system.')
@@ -233,6 +234,21 @@ def request_list(data):
     reg_row_index = existing_regplates.index(data) + 1 # index of reg. number row
     reg_row = business.row_values(reg_row_index) # reg. number row
     parking_info_presentation(reg_row)
+    final_price_count(reg_row)
+    
+
+
+def final_price_count(data):
+    '''
+    Function to count final price according
+    to the final duration of parking.
+    '''
+    initial_price = data[1]
+    print(f'\nOk your initial duration was {initial_price} hours.')
+    print('You arrived(select one scenario):\n1. Earlier\n2. On point\n3. Later')
+    print('Type in 1, 2, or 3.')
+    real_duration = input('\n: ')
+
 
 def drivers_choice():
     '''
