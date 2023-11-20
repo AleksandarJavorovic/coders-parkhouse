@@ -71,12 +71,12 @@ def farewell_message():
     quit()
 
 
-def parking_info_presentation():
+def parking_info_presentation(data):
     '''
     Function to present info to the driver.
     Registration number, duration and price.
     '''
-    driver_details_display = {parking_info[i]: driver_details[i] for i in range(len(parking_info))}
+    driver_details_display = {parking_info[i]: data[i] for i in range(len(parking_info))}
     print(driver_details_display)
 
 
@@ -232,7 +232,7 @@ def request_list(data):
     existing_regplates = business.col_values(1)
     reg_row_index = existing_regplates.index(data) + 1 # index of reg. number row
     reg_row = business.row_values(reg_row_index) # reg. number row
-    print(reg_row)
+    parking_info_presentation(reg_row)
 
 def drivers_choice():
     '''
@@ -256,7 +256,7 @@ def drivers_choice():
             enter_regplate()
             initial_time_function()
             initial_price_calculation()
-            parking_info_presentation()
+            parking_info_presentation(driver_details)
             save_driver_detials()
             return_to_parkinglot()
         elif driver_int == 2:
