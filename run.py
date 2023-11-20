@@ -192,7 +192,8 @@ def enter_regplate_leave():
     reg_plates = input('\n: ')
     if (re.search(reg_plates_pattern, reg_plates)):
         if reg_plates in existing_regplates:
-            print('\nValid regplates!')
+            print('\nOk, here are your details:\n') # here to add
+            request_list(reg_plates)
         elif reg_plates not in existing_regplates:
             print('\nRegistration number is valid but not in our system.')
             print('Are you sure that you parked here?')
@@ -221,6 +222,17 @@ def reg_check_two():
         reg_check_two()
 
 
+def request_list(data):
+    '''
+    Function to pull the list from google sheet
+    according to the registration number.
+    It will retrieve registration number,
+    initial parking time and initial price.
+    '''
+    existing_regplates = business.col_values(1)
+    reg_row_index = existing_regplates.index(data) + 1 # index of reg. number row
+    reg_row = business.row_values(reg_row_index) # reg. number row
+    print(reg_row)
 
 def drivers_choice():
     '''
