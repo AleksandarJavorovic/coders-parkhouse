@@ -164,19 +164,23 @@ def enter_regplate():
         print('You either have to pay your debt')
         print('to be able to park here again')
         print('or re-enter your reg. number if you made a mistake.')
-        reg_check()
+        reg_check(reg_plates)
 
 
-def reg_check():
+def reg_check(data):
     '''
     Function to run when registration is already existing
     '''
     print('To pay your debt type in "pay".')
     print('To enter new reg-number type in "new".')
+    existing_regplates = business.col_values(1)
     reg_plate_check = input('\n: ')
     if reg_plate_check == 'pay':
-        print('I want to pay my bill!')
-        quit()
+        print('\nPaying...')
+        reg_row_index = existing_regplates.index(data) + 1
+        reg_row = business.delete_rows(reg_row_index) # deleting reg. number row from sheet
+        print('\nOk now you can park here again.\n')
+        enter_regplate()
     elif reg_plate_check == 'new':
         enter_regplate()
     else:
