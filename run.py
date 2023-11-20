@@ -13,9 +13,7 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('coders_parkhouse')
 
-business = SHEET.worksheet('business') 
-
-business_data = business.get_all_values()
+business = SHEET.worksheet('business') # google sheet
 
 # Pattern of the regplates to enter.
 reg_plates_pattern = '[A-Z]{2,4}[-][0-9]{3,5}[-][A-Z]{2}'
@@ -184,6 +182,39 @@ def reg_check():
         reg_check()
 
 
+def enter_regplate_leave():
+    '''
+    Function to be run before exiting the parking lot.
+    Checking for the existing registration number.
+    '''
+    existing_regplates = business.col_values(1)
+    print('\nWe need your registration number please.')
+    reg_plates = input('\n: ')
+    if (re.search(reg_plates_pattern, reg_plates)):
+        if reg_plates in existing_regplates:
+            print('\nValid regplates!')
+        elif reg_plates not in existing_regplates:
+            print('\nRegistration number is not in our system.')
+            print('Are you sure that you parked here?')
+            print('1. "Yes" I am sure(type in your reg. number again)')
+            print('2. "No", looks like I made a mistake. o.O')
+            print('Yes or no please.')
+            drivers_answer = input('\n:')
+            drivers_answer_lower = drivers_answer.lower()
+            if drivers_answer_lower == 'yes':
+                enter_regplate_leave()
+            elif drivers_answer_lower == 'no':
+                farewell_message()
+            elif drivers_answer_lower != 'yes' and drivers_answer_lower != 'no':
+                print('\nPlease answer with "yes" or "no".\n') 
+                
+    else:
+        print('\nInvalid data, please use correct pattern.')
+        enter_regplate_leave()
+
+   
+
+
 
 def drivers_choice():
     '''
@@ -211,7 +242,7 @@ def drivers_choice():
             save_driver_detials()
             return_to_parkinglot()
         elif driver_int == 2:
-            print('I would like to leave the parking lot')
+            enter_regplate_leave()
         elif driver_int != 1 and driver_int != 2:
             print(f'\nYou typed in: {driver_int}, that\'s not an option try again.\n')
             drivers_choice()
