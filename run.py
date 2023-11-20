@@ -245,20 +245,27 @@ def final_price_count(data):
     '''
     initial_time = data[1]
     initial_price = data[2]
-    print(f'\nOk your initial duration was {initial_time} hours.')
-    print('You arrived(select one scenario):\n1. Earlier\n2. On point\n3. Later')
+    print(f'\nYour initial duration was {initial_time} hours.')
+    print('\nYou arrived(select one scenario):\n1. Earlier\n2. On point\n3. Later')
     print('Type in 1, 2, or 3.')
     real_duration = input('\n: ')
-    if int(real_duration) == 1:
-        final_price = initial_price
-        print(f'Your final price should be {final_price}.')
-    elif int(real_duration) == 2:
-        final_price = initial_price
-        print(f'Your final price should be {final_price}.')
-    elif int(real_duration) == 3:
-        final_price = str(int(initial_price) + 10)
-        print(f'Your final price should be {final_price}.')
-    
+    try:
+        if int(real_duration) == 1:
+            final_price = initial_price
+            print(f'\nYour final price should be {final_price}€.\n')
+        elif int(real_duration) == 2:
+            final_price = initial_price
+            print(f'\nYour final price should be {final_price}€.\n')
+        elif int(real_duration) == 3:
+            final_price = str(int(initial_price) + 10)
+            print(f'\nYour final price should be {final_price}€.\n')
+        elif int(real_duration) != [1, 2, 3]:
+            print('That\'s not an option.')
+            final_price_count(data)
+    except ValueError:
+        print('Invalid input!')
+        final_price_count(data)
+
 
 
 def drivers_choice():
