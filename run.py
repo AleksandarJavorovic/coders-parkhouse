@@ -238,6 +238,7 @@ def request_list(data):
     It will retrieve registration number,
     initial parking time and initial price.
     '''
+    existing_regplates = business.col_values(1)
     reg_row_index = existing_regplates.index(data) + 1 # index of reg. number row
     reg_row = business.row_values(reg_row_index) # reg. number row
     parking_info_presentation(reg_row)
@@ -312,8 +313,9 @@ def pay_at_exit(data):
     final_payment = input('\n: ')
     if final_payment.lower() == 'pay':
         print('Paying...')
+        existing_regplates = business.col_values(1)
         reg_row_index = existing_regplates.index(data[0]) + 1 # index of reg. number row
-        business.delete_rows(reg_row_index) # deleting row from the sheet
+        business.delete_rows(reg_row_index)
         print('Complete!')
         farewell_message()
     else:
