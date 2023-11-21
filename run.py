@@ -111,7 +111,7 @@ def initial_price_calculation():
     according to the inital parking time.
     '''
     initial_price = str(int(driver_details[1]) * 3) # Calculating initial price.
-    driver_details.insert(2, initial_price)
+    driver_details.insert(2, initial_price) # inserting price into the list on the 3rd spot
 
 
 def save_driver_detials():
@@ -171,13 +171,13 @@ def reg_check(data):
     '''
     Function to run when registration is already existing
     '''
-    print('To pay your debt type in "pay".')
+    print('\nTo pay your debt type in "pay".')
     print('To enter new reg-number type in "new".')
     existing_regplates = business.col_values(1)
     reg_plate_check = input('\n: ')
     if reg_plate_check == 'pay':
         print('\nPaying...')
-        reg_row_index = existing_regplates.index(data) + 1
+        reg_row_index = existing_regplates.index(data) + 1 # finding index of reg. num row
         reg_row = business.delete_rows(reg_row_index) # deleting reg. number row from sheet
         print('\nOk now you can park here again.\n')
         enter_regplate()
@@ -185,7 +185,8 @@ def reg_check(data):
         enter_regplate()
     else:
         print('\nInvalid input!')
-        reg_check()
+        print(f'Sorry, but "{reg_plate_check}" is not an option.')
+        return reg_check(data)
 
 
 def enter_regplate_leave():
@@ -297,7 +298,12 @@ def drivers_choice():
             initial_price_calculation()
             parking_info_presentation(driver_details)
             save_driver_detials()
-            driver_details.clear() # clearing driver_details list
+            '''
+            Clearing drivers_details list to prevent multiple
+            lists being written into the sheet if we choose the same
+            registration number after "return" in the end of the program.
+            '''
+            driver_details.clear()
             return_to_parkinglot()
         elif driver_int == 2:
             enter_regplate_leave()
