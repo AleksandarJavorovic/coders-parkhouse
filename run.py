@@ -15,6 +15,8 @@ SHEET = GSPREAD_CLIENT.open('coders_parkhouse')
 
 business = SHEET.worksheet('business') # google sheet
 
+existing_regplates = business.col_values(1)
+
 # Pattern of the regplates to enter.
 reg_plates_pattern = '[A-Z]{2,4}[-][0-9]{3,5}[-][A-Z]{2}'
 
@@ -236,7 +238,6 @@ def request_list(data):
     It will retrieve registration number,
     initial parking time and initial price.
     '''
-    existing_regplates = business.col_values(1)
     reg_row_index = existing_regplates.index(data) + 1 # index of reg. number row
     reg_row = business.row_values(reg_row_index) # reg. number row
     parking_info_presentation(reg_row)
@@ -257,17 +258,17 @@ def final_price_count(data):
     real_duration = input('\n: ')
     try:
         if int(real_duration) == 1:
-            final_price = initial_price
+            final_price = initial_price # earlier
             print(f'\nYour final price should be {final_price}€.\n')
-            driver_coder(final_price)
+            driver_coder(data, final_price)
         elif int(real_duration) == 2:
-            final_price = initial_price
+            final_price = initial_price # on point
             print(f'\nYour final price should be {final_price}€.\n')
-            driver_coder(final_price)
+            driver_coder(data, final_price)
         elif int(real_duration) == 3:
-            final_price = str(int(initial_price) + 10)
+            final_price = str(int(initial_price) + 10) # later
             print(f'\nYour final price should be {final_price}€.\n')
-            driver_coder(final_price)
+            driver_coder(data, final_price)
         elif int(real_duration) != [1, 2, 3]:
             print('That\'s not an option.')
             final_price_count(data)
@@ -276,7 +277,7 @@ def final_price_count(data):
         final_price_count(data)
 
 
-def driver_coder(data):
+def driver_coder(data, price):
     '''
     Function to ask our driver if he works for
     CODE INSTITUTE or not, and maybe apply small
@@ -290,14 +291,34 @@ def driver_coder(data):
     print('If you know it, type it in, and save your self few euros.')
     print('(Shhhh, its: CODE)')
     check_coder = input('\n: ')
-    if check_coder == 'CODE':
-        final_price_cor = int(data) - 2 # calculating real final price
+    if check_coder == 'CODE': # checking if the input is equal to CODE
+        final_price_cor = int(price) - 2 # calculating real final price
         print('\nLooks like your boss likes you! :)')
         print(f'\nYour final price is {final_price_cor}€.\n')
+        pay_at_exit(data)
     else:
-        final_price_cor = data
+        final_price_cor = price
         print('\nLooks like your boss doesn\'t like you so much. :(')
         print(f'\nSorry, you still need to pay {final_price_cor}€.\n')
+        pay_at_exit(data)
+
+
+def pay_at_exit(data):
+    '''
+    Function to pay the final price at the exit
+    and quit the program.
+    '''
+    print('To pay, type in "pay".')
+    final_payment = input('\n: ')
+    if final_payment.lower() == 'pay':
+        print('Paying...')
+        reg_row_index = existing_regplates.index(data[0]) + 1 # index of reg. number row
+        business.delete_rows(reg_row_index) # deleting row from the sheet
+        print('Complete!')
+        farewell_message()
+    else:
+        print('Sorry, until you pay, you can\'t drive out! :)')
+        pay_at_exit()
 
 
 
