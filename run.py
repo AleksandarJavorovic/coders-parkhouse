@@ -259,18 +259,45 @@ def final_price_count(data):
         if int(real_duration) == 1:
             final_price = initial_price
             print(f'\nYour final price should be {final_price}€.\n')
+            driver_coder(final_price)
         elif int(real_duration) == 2:
             final_price = initial_price
             print(f'\nYour final price should be {final_price}€.\n')
+            driver_coder(final_price)
         elif int(real_duration) == 3:
             final_price = str(int(initial_price) + 10)
             print(f'\nYour final price should be {final_price}€.\n')
+            driver_coder(final_price)
         elif int(real_duration) != [1, 2, 3]:
             print('That\'s not an option.')
             final_price_count(data)
     except ValueError:
         print('Invalid input!')
         final_price_count(data)
+
+
+def driver_coder(data):
+    '''
+    Function to ask our driver if he works for
+    CODE INSTITUTE or not, and maybe apply small
+    discount if the answer is positive and the
+    driver knows the secret code. :)
+    '''
+    print('Hey, I almost forgot to ask you.')
+    print('Are you by any chance working for Code Institute?')
+    print('If you do, I hope your boss told you about the code')
+    print('for 2€ coffee discount we gave them long time ago.')
+    print('If you know it, type it in, and save your self few euros.')
+    print('(Shhhh, its: CODE)')
+    check_coder = input('\n: ')
+    if check_coder == 'CODE':
+        final_price_cor = int(data) - 2 # calculating real final price
+        print('\nLooks like your boss likes you! :)')
+        print(f'\nYour final price is {final_price_cor}€.\n')
+    else:
+        final_price_cor = data
+        print('\nLooks like your boss doesn\'t like you so much. :(')
+        print(f'\nSorry, you still need to pay {final_price_cor}€.\n')
 
 
 
