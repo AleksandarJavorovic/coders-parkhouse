@@ -297,6 +297,7 @@ def drivers_choice():
             initial_price_calculation()
             parking_info_presentation(driver_details)
             save_driver_detials()
+            driver_details.clear() # clearing driver_details list
             return_to_parkinglot()
         elif driver_int == 2:
             enter_regplate_leave()
