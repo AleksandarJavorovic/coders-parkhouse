@@ -319,8 +319,8 @@ def pay_at_exit(data):
         print('Complete!')
         farewell_message()
     else:
-        print('Sorry, until you pay, you can\'t drive out! :)')
-        pay_at_exit()
+        print('\nSorry, until you pay, you can\'t drive out! :)')
+        pay_at_exit(data)
 
 
 
