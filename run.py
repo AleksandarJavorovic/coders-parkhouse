@@ -2,6 +2,8 @@ import gspread
 from google.oauth2.service_account import Credentials
 import re
 
+# This part of code is taken from Love Sandwiches project
+###############################################################
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
@@ -12,6 +14,7 @@ CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('coders_parkhouse')
+###############################################################
 
 business = SHEET.worksheet('business') # google sheet
 
@@ -135,7 +138,7 @@ def return_to_parkinglot():
         drivers_choice() # Starting the program again.
     elif driver_returns.upper() == 'NOT YET':
         print('\nOk, see ya later!\n')
-        quit()
+        quit() # quiting the program
     else:
         print('\nInvalid input.\n')
         return_to_parkinglot()
@@ -199,11 +202,11 @@ def enter_regplate_leave():
     existing_regplates = business.col_values(1)
     print('\nWe need your registration number please.')
     reg_plates = input('\n: ')
-    if (re.search(reg_plates_pattern, reg_plates)):
-        if reg_plates in existing_regplates:
+    if (re.search(reg_plates_pattern, reg_plates)): # cheking the pattern
+        if reg_plates in existing_regplates: # checking if regplates are already present
             print('\nDetails loading...\n')
             request_list(reg_plates)
-        elif reg_plates not in existing_regplates:
+        elif reg_plates not in existing_regplates: # regplates aren't present in the sheet
             print('\nRegistration number is valid but not in our system.')
             print('Are you sure that you parked here?')
             print('1. "Yes" I am sure(type in your reg. number again)')
@@ -217,7 +220,7 @@ def enter_regplate_leave():
 
 def reg_check_two():
     '''
-    Recursive function in case user doens't answer
+    Recursive function in case user doesn't answer
     with yes or no.
     '''
     drivers_answer = input('\n: ')
@@ -240,7 +243,7 @@ def request_list(data):
     '''
     existing_regplates = business.col_values(1)
     reg_row_index = existing_regplates.index(data) + 1 # index of reg. number row
-    reg_row = business.row_values(reg_row_index) # reg. number row
+    reg_row = business.row_values(reg_row_index) # reg. number row in google sheet
     parking_info_presentation(reg_row)
     final_price_count(reg_row)
     
@@ -258,21 +261,26 @@ def final_price_count(data):
     print('Type in 1, 2, or 3.')
     real_duration = input('\n: ')
     try:
+        # checking for the + prefix
         if (re.findall("[+]", real_duration)):
             print('\nDon\'t use prefix plus.\n')
             final_price_count(data)
+        # earlier
         elif int(real_duration) == 1:
             final_price = initial_price # earlier
             print(f'\nYour final price should be {final_price}€.\n')
             driver_coder(data, final_price)
+        # on point
         elif int(real_duration) == 2:
             final_price = initial_price # on point
             print(f'\nYour final price should be {final_price}€.\n')
             driver_coder(data, final_price)
+        # later
         elif int(real_duration) == 3:
             final_price = str(int(initial_price) + 10) # later
             print(f'\nYour final price should be {final_price}€.\n')
             driver_coder(data, final_price)
+        # none of the above options
         elif int(real_duration) != [1, 2, 3]:
             print('\nThat\'s not an option.')
             final_price_count(data)
@@ -297,7 +305,7 @@ def driver_coder(data, price):
     print('(Shhhh, its: CI2023)')
     check_coder = input('\n: ')
     if check_coder.upper() == 'CI2023': # checking if the input is equal to CI2023
-        final_price_cor = int(price) - int(price) * 0.1 # calculating real final price
+        final_price_cor = int(price) - int(price) * 0.1 # calculating discounted final price
         print('\nLooks like your boss likes you! :)')
         print(f'\nYour final price is {final_price_cor}€.\n')
         pay_at_exit(data)
@@ -320,7 +328,7 @@ def pay_at_exit(data):
         print('Paying...')
         existing_regplates = business.col_values(1)
         reg_row_index = existing_regplates.index(data[0]) + 1 # index of reg. number row
-        business.delete_rows(reg_row_index)
+        business.delete_rows(reg_row_index) # deleting the row in google sheet(paying...)
         print('Complete!')
         farewell_message()
     else:
@@ -358,7 +366,7 @@ def drivers_choice():
             lists being written into the sheet if we choose the same
             registration number after "return" in the end of the program.
             '''
-            driver_details.clear()
+            driver_details.clear() 
             return_to_parkinglot()
         elif driver_int == 2:
             enter_regplate_leave()
