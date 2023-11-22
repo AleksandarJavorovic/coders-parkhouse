@@ -29,9 +29,6 @@ spec_char = '[\\s !@#$%^&*()_=~+|<,>./?\\]}\\[{]'
 # Pattern for parking duration.
 time_pattern = '^\\d+$'
 
-# Pattern for plus sign.
-plus_minus_pattern = '^[+]+$'
-
 # List to contain driver's details.
 driver_details = []
 
@@ -174,7 +171,8 @@ def enter_regplate():
             # validating the reg. pattern.
             if (re.search(reg_plates_pattern, reg_plates)):
                 print('\n\nRegistration number is valid!\n')
-                driver_details.insert(0, reg_plates)  # Add reg_plates to the list.
+                # Add reg_plates to the list.
+                driver_details.insert(0, reg_plates)
             else:
                 print('\nSorry, invalid input!')
                 return enter_regplate()
