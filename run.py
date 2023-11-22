@@ -24,7 +24,7 @@ existing_regplates = business.col_values(1)
 reg_plates_pattern = '[A-Z]{2,4}[-][0-9]{3,5}[-][A-Z]{2}'
 
 # Pattern for parking duration.
-initial_time_pattern = '^\\d+$'
+time_pattern = '^\\d+$'
 
 # Pattern for plus sign.
 plus_minus_pattern = '^[+]+$'
@@ -83,8 +83,8 @@ def parking_info_presentation(data):
     Registration number, duration and price.
     Creating dict. out of 2 lists.
     '''
-    driver_details_display = {parking_info[i]: data[i] for i in range(len(parking_info))}
-    print(driver_details_display)
+    driver_info = {parking_info[i]: data[i] for i in range(len(parking_info))}
+    print(driver_info)
 
 
 def initial_time_function():
@@ -98,7 +98,7 @@ def initial_time_function():
         if int(initial_time) == 0:
             print('\nZero is not an option, sorry.\n')
             initial_time_function()
-        elif (re.search(initial_time_pattern, initial_time)) and int(initial_time) > 0:
+        elif (re.search(time_pattern, initial_time)) and int(initial_time) > 0:
             # adding initial_time to the list
             driver_details.insert(1, initial_time)
             print('\nVery well!')
