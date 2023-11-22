@@ -44,7 +44,8 @@ def parking_prices():
     print('\n\nOk, rules are following:\n')
     print('1. You need to enter for how many hours you want to park.')
     print('2. Price per hour is 3€.')
-    print('3. If you exceed your time, penaltie fee of 10€ will be applied.')
+    print('3. Hours dictate minimal amount which you will have to pay.')
+    print('4. If you exceed your time, penalty fee of 10€ will be applied.')
     print('Are you ok with it?')
     print('Answer with "yes" to continue or "no" to reject.')
 
@@ -64,7 +65,7 @@ def parking_decision():
         elif drivers_answer_lower != 'yes' and drivers_answer_lower != 'no':
             print('\nPlease answer with "yes" or "no".\n')
             parking_decision()
-    except:
+    except ValueError:
         quit()
 
 
@@ -311,7 +312,7 @@ def driver_coder(data, price):
     print('Do you know about the code for 10⁒ discount')
     print('we gave them long time ago?')
     print('If you know it, type it in and save yourself few euros.')
-    print('If you don\'t type in anything to skip to the payment.')
+    print('If you don\'t, type in anything to skip to the payment.')
     print('(Shhhh, its: CI2023)')
     check_coder = input('\n: ')
     if check_coder.upper() == 'CI2023':
