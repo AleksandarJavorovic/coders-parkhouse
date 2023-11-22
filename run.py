@@ -21,7 +21,7 @@ business = SHEET.worksheet('business')  # google sheet
 existing_regplates = business.col_values(1)
 
 # Pattern of the regplates to enter.
-reg_plates_pattern = '[A-Z]{2,4}[-][0-9]{3,5}[-][A-Z]{2}'
+reg_plates_pattern = '^[A-Z]{2,3}[-][0-9]{3,4}[-][A-Z]{2}$'
 
 # Pattern for special characters
 spec_char = '[\\s !@#$%^&*()_=~+|<,>./?\\]}\\[{]'
@@ -218,22 +218,26 @@ def enter_regplate_leave():
     existing_regplates = business.col_values(1)
     print('\nWe need your registration number please.')
     reg_plates = input('\n: ')
-    if (re.search(reg_plates_pattern, reg_plates)):  # cheking the pattern
-        # checking if regplates are already present
-        if reg_plates in existing_regplates:
-            print('\nDetails loading...\n')
-            request_list(reg_plates)
-        # regplates aren't present in the sheet
-        elif reg_plates not in existing_regplates:
-            print('\nRegistration number is valid but not in our system.')
-            print('Are you sure that you parked here?')
-            print('1. "Yes" I am sure(type in your reg. number again)')
-            print('2. "No", looks like I made a mistake. o.O')
-            print('Yes or no please.')
-            reg_check_two()
-    else:
-        print('\nInvalid data, please use correct pattern.')
+    if (re.search(spec_char, reg_plates)):
+        print('\nInvalid input!\nNo special characters!')
         enter_regplate_leave()
+    else:
+        if (re.search(reg_plates_pattern, reg_plates)):  # cheking the pattern
+            # checking if regplates are already present
+            if reg_plates in existing_regplates:
+                print('\nDetails loading...\n')
+                request_list(reg_plates)
+            # regplates aren't present in the sheet
+            elif reg_plates not in existing_regplates:
+                print('\nRegistration number is valid but not in our system.')
+                print('Are you sure that you parked here?')
+                print('1. "Yes" I am sure(type in your reg. number again)')
+                print('2. "No", looks like I made a mistake. o.O')
+                print('Yes or no please.')
+                reg_check_two()
+        else:
+            print('\nInvalid data, please use correct pattern.')
+            enter_regplate_leave()
 
 
 def reg_check_two():
