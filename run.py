@@ -162,26 +162,21 @@ def enter_regplate():
     # List of registration numbers within the sheet
     existing_regplates = business.col_values(1)
     reg_plates = input('\nEnter registration number\n: ')
-    if (re.search(spec_char, reg_plates)):
-        print('\nInvalid input!')
-        enter_regplate()
-    else:
-        # checking the list of existing reg. numbers
-        if reg_plates not in existing_regplates:
-            # validating the reg. pattern.
-            if (re.search(reg_plates_pattern, reg_plates)):
-                print('\n\nRegistration number is valid!\n')
-                # Add reg_plates to the list.
-                driver_details.insert(0, reg_plates)
-            else:
-                print('\nSorry, invalid input!')
-                return enter_regplate()
+    if reg_plates not in existing_regplates:
+        # validating the reg. pattern.
+        if (re.search(reg_plates_pattern, reg_plates)):
+            print('\n\nRegistration number is valid!\n')
+            # Add reg_plates to the list.
+            driver_details.insert(0, reg_plates)
         else:
-            print('\nRegistration number is already in our system!\n')
-            print('You either have to pay your debt')
-            print('to be able to park here again')
-            print('or re-enter your reg. number if you made a mistake.')
-            reg_check(reg_plates)
+            print('\nSorry, invalid input!')
+            return enter_regplate()
+    else:
+        print('\nRegistration number is already in our system!\n')
+        print('You either have to pay your debt')
+        print('to be able to park here again')
+        print('or re-enter your reg. number if you made a mistake.')
+        reg_check(reg_plates)
 
 
 def reg_check(data):
@@ -216,26 +211,22 @@ def enter_regplate_leave():
     existing_regplates = business.col_values(1)
     print('\nWe need your registration number please.')
     reg_plates = input('\n: ')
-    if (re.search(spec_char, reg_plates)):
-        print('\nInvalid input!\nNo special characters!')
-        enter_regplate_leave()
+    if (re.search(reg_plates_pattern, reg_plates)):  # cheking the pattern
+        # checking if regplates are already present
+        if reg_plates in existing_regplates:
+            print('\nDetails loading...\n')
+            request_list(reg_plates)
+        # regplates aren't present in the sheet
+        elif reg_plates not in existing_regplates:
+            print('\nRegistration number is valid but not in our system.')
+            print('Are you sure that you parked here?')
+            print('1. "Yes" I am sure(type in your reg. number again)')
+            print('2. "No", looks like I made a mistake. o.O')
+            print('Yes or no please.')
+            reg_check_two()
     else:
-        if (re.search(reg_plates_pattern, reg_plates)):  # cheking the pattern
-            # checking if regplates are already present
-            if reg_plates in existing_regplates:
-                print('\nDetails loading...\n')
-                request_list(reg_plates)
-            # regplates aren't present in the sheet
-            elif reg_plates not in existing_regplates:
-                print('\nRegistration number is valid but not in our system.')
-                print('Are you sure that you parked here?')
-                print('1. "Yes" I am sure(type in your reg. number again)')
-                print('2. "No", looks like I made a mistake. o.O')
-                print('Yes or no please.')
-                reg_check_two()
-        else:
-            print('\nInvalid data, please use correct pattern.')
-            enter_regplate_leave()
+        print('\nInvalid data, please use correct pattern.')
+        enter_regplate_leave()
 
 
 def reg_check_two():
