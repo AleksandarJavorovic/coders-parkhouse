@@ -285,15 +285,16 @@ def driver_coder(data, price):
     discount if the answer is positive and the
     driver knows the secret code. :)
     '''
-    print('Hey, I almost forgot to ask you.')
-    print('Are you by any chance working for Code Institute?')
-    print('If you do, I hope your boss told you about the code')
-    print('for 2€ coffee discount we gave them long time ago.')
-    print('If you know it, type it in, and save your self few euros.')
-    print('(Shhhh, its: CODE)')
+    print('Hey, I almost forgot to tell you.')
+    print('I think you work Code Institute.')
+    print('Do you know about the code for 10⁒ discount')
+    print('we gave them long time ago?')
+    print('If you know it, type it in and save your self few euros.')
+    print('If you don\'t type in anything to skip to the payment.')
+    print('(Shhhh, its: CI2023)')
     check_coder = input('\n: ')
-    if check_coder == 'CODE': # checking if the input is equal to CODE
-        final_price_cor = int(price) - 2 # calculating real final price
+    if check_coder.upper() == 'CI2023': # checking if the input is equal to CI2023
+        final_price_cor = int(price) - int(price) * 0.1 # calculating real final price
         print('\nLooks like your boss likes you! :)')
         print(f'\nYour final price is {final_price_cor}€.\n')
         pay_at_exit(data)
@@ -302,6 +303,7 @@ def driver_coder(data, price):
         print('\nLooks like your boss doesn\'t like you so much. :(')
         print(f'\nSorry, you still need to pay {final_price_cor}€.\n')
         pay_at_exit(data)
+    
 
 
 def pay_at_exit(data):
