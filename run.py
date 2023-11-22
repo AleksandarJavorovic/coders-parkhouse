@@ -58,7 +58,7 @@ def parking_decision():
     drivers_answer_lower = drivers_answer.lower()
     try:
         if drivers_answer_lower == 'yes':
-            print('\n\nWith that in mind, we are going to need your registration number.')
+            print('\n\nWe are going to need your registration number.')
         elif drivers_answer_lower == 'no':
             farewell_message()
         elif drivers_answer_lower != 'yes' and drivers_answer_lower != 'no':
@@ -98,15 +98,18 @@ def initial_time_function():
             print('\nZero is not an option, sorry.\n')
             initial_time_function()
         elif (re.search(initial_time_pattern, initial_time)) and int(initial_time) > 0:
-            driver_details.insert(1, initial_time)  # adding initial_time to the list
+            # adding initial_time to the list
+            driver_details.insert(1, initial_time)
             print('\nVery well!')
             print('\nTry not to be late, otherwise it will be more expensive.')
             print('\nYour parking details are:\n')
-        elif (re.findall("[+-]", initial_time)):  # insuring there are no +/- prefixes
+        # insuring there are no +/- prefixes
+        elif (re.findall("[+-]", initial_time)):
             print('\nDon\'t use plus/minus signs as prefix.\n')
             initial_time_function()
     except ValueError:  # handling invalid inputs
-        print('\nUse only didigts 0-9, only whole numbers please and no special signs.\n')
+        print('\nUse only didigts 0-9, only whole numbers please.')
+        print('No special signs neither.\n')
         initial_time_function()
 
 
@@ -131,7 +134,7 @@ def return_to_parkinglot():
     Function which brings the driver to the entrance
     of the parking lot again or lets him leave.
     '''
-    print('\n\nType in "RETURN", to return to the parking lot to pick up your car.')
+    print('\n\nType in "RETURN", to return to pick up your car.')
     print('If you aren\'t ready to pick up your car yet, type in "NOT YET".')
     driver_returns = input('\n: ')
     if driver_returns.upper() == 'RETURN':
@@ -155,14 +158,17 @@ def enter_regplate():
     print('\nX,Y,Z representing any UPPERCASE letter [A-Z].')
     print('For the numbers section use digits [0-9].')
     print('Don\'t forget dashes where needed.')
-    existing_regplates = business.col_values(1)  # List of registration numbers within the sheet
+    # List of registration numbers within the sheet
+    existing_regplates = business.col_values(1)
     reg_plates = input('\nEnter registration number\n: ')
-    if reg_plates not in existing_regplates:  # checking the list of existing reg. numbers
-        if (re.search(reg_plates_pattern, reg_plates)):  # validating the reg. pattern.
+    # checking the list of existing reg. numbers
+    if reg_plates not in existing_regplates:
+        # validating the reg. pattern.
+        if (re.search(reg_plates_pattern, reg_plates)):
             print('\n\nRegistration number is valid!\n')
-            driver_details.insert(0, reg_plates)  # Adding reg_plates to the list.
+            driver_details.insert(0, reg_plates)  # Add reg_plates to the list.
         else:
-            print('\nSorry, that doesn\'t look like any of the patterns provided.')
+            print('\nSorry, invalid input!')
             return enter_regplate()
     else:
         print('\nRegistration number is already in our system!\n')
@@ -182,8 +188,10 @@ def reg_check(data):
     reg_plate_check = input('\n: ')
     if reg_plate_check == 'pay':
         print('\nPaying...')
-        reg_row_index = existing_regplates.index(data) + 1  # finding index of reg. num row
-        reg_row = business.delete_rows(reg_row_index)  # deleting reg. number row from sheet
+        # finding index of reg. num row
+        reg_row_index = existing_regplates.index(data) + 1
+        # deleting reg. number row from sheet
+        reg_row = business.delete_rows(reg_row_index)
         print('\nOk now you can park here again.\n')
         enter_regplate()
     elif reg_plate_check == 'new':
@@ -203,10 +211,12 @@ def enter_regplate_leave():
     print('\nWe need your registration number please.')
     reg_plates = input('\n: ')
     if (re.search(reg_plates_pattern, reg_plates)):  # cheking the pattern
-        if reg_plates in existing_regplates:  # checking if regplates are already present
+        # checking if regplates are already present
+        if reg_plates in existing_regplates:
             print('\nDetails loading...\n')
             request_list(reg_plates)
-        elif reg_plates not in existing_regplates:  # regplates aren't present in the sheet
+        # regplates aren't present in the sheet
+        elif reg_plates not in existing_regplates:
             print('\nRegistration number is valid but not in our system.')
             print('Are you sure that you parked here?')
             print('1. "Yes" I am sure(type in your reg. number again)')
@@ -242,8 +252,8 @@ def request_list(data):
     initial parking time and initial price.
     '''
     existing_regplates = business.col_values(1)
-    reg_row_index = existing_regplates.index(data) + 1  # index of reg. number row
-    reg_row = business.row_values(reg_row_index)  # reg. number row in google sheet
+    reg_row_index = existing_regplates.index(data) + 1  # row index
+    reg_row = business.row_values(reg_row_index)  # google sheet row
     parking_info_presentation(reg_row)
     final_price_count(reg_row)
 
@@ -256,7 +266,8 @@ def final_price_count(data):
     initial_time = data[1]
     initial_price = data[2]
     print(f'\nYour initial duration was {initial_time} hours.')
-    print('\nYou arrived(select one scenario):\n1. Earlier\n2. On point\n3. Later')
+    print('\nYou arrived(select one scenario):')
+    print('1. Earlier\n2. On point\n3. Later')
     print('Type in 1, 2, or 3.')
     real_duration = input('\n: ')
     try:
@@ -303,8 +314,9 @@ def driver_coder(data, price):
     print('If you don\'t type in anything to skip to the payment.')
     print('(Shhhh, its: CI2023)')
     check_coder = input('\n: ')
-    if check_coder.upper() == 'CI2023':  # checking if the input is equal to CI2023
-        final_price_cor = int(price) - int(price) * 0.1  # calc. discounted final price
+    if check_coder.upper() == 'CI2023':
+        # calc. discounted final price
+        final_price_cor = int(price) - int(price) * 0.1
         print('\nLooks like your boss likes you! :)')
         print(f'\nYour final price is {final_price_cor}€.\n')
         pay_at_exit(data)
@@ -325,8 +337,8 @@ def pay_at_exit(data):
     if final_payment.lower() == 'pay':
         print('Paying...')
         existing_regplates = business.col_values(1)
-        reg_row_index = existing_regplates.index(data[0]) + 1  # index of reg. number row
-        business.delete_rows(reg_row_index)  # deleting the row in google sheet(paying...)
+        reg_row_index = existing_regplates.index(data[0]) + 1  # row index
+        business.delete_rows(reg_row_index)  # deleting google sheet row
         print('Complete!')
         farewell_message()
     else:
@@ -342,7 +354,8 @@ def drivers_choice():
     the driver to chose between 1 and 2.
     '''
     print('\nHello there and welcome to the Coders Parkhouse.\n')
-    print('What would you like to do?\n1. Park the car\n2. Leave the parking lot\n')
+    print('What would you like to do?')
+    print('1. Park the car\n2. Leave the parking lot\n')
     try:
         driver = input('Please enter 1 or 2\n: ')
         driver_int = int(driver)
@@ -368,10 +381,12 @@ def drivers_choice():
         elif driver_int == 2:
             enter_regplate_leave()
         elif driver_int != 1 and driver_int != 2:
-            print(f'\nYou typed in: {driver_int}, that\'s not an option try again.\n')
+            print(f'\nYou typed in: {driver_int}')
+            print('That\'s not an option try again.\n')
             drivers_choice()
-    except ValueError:  # Handling te errors in case the answer is not an integer.
-        print(f'\nYou typed in: {driver}, you must choose between numbers 1 and 2.\n')
+    except ValueError:  # Handling ValueErrors
+        print(f'\nYou typed in: {driver}')
+        print('You must choose between numbers 1 and 2.\n')
         drivers_choice()
 
 
