@@ -258,7 +258,10 @@ def final_price_count(data):
     print('Type in 1, 2, or 3.')
     real_duration = input('\n: ')
     try:
-        if int(real_duration) == 1:
+        if (re.findall("[+]", real_duration)):
+            print('\nDon\'t use prefix plus.\n')
+            final_price_count(data)
+        elif int(real_duration) == 1:
             final_price = initial_price # earlier
             print(f'\nYour final price should be {final_price}€.\n')
             driver_coder(data, final_price)
@@ -271,7 +274,7 @@ def final_price_count(data):
             print(f'\nYour final price should be {final_price}€.\n')
             driver_coder(data, final_price)
         elif int(real_duration) != [1, 2, 3]:
-            print('That\'s not an option.')
+            print('\nThat\'s not an option.')
             final_price_count(data)
     except ValueError:
         print('Invalid input!')
