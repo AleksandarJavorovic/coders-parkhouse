@@ -288,11 +288,11 @@ def driver_coder(data, price):
     discount if the answer is positive and the
     driver knows the secret code. :)
     '''
-    print('Hey, I almost forgot to tell you.')
+    print('Hey, one thing I want to tell you.')
     print('I think you work Code Institute.')
     print('Do you know about the code for 10⁒ discount')
     print('we gave them long time ago?')
-    print('If you know it, type it in and save your self few euros.')
+    print('If you know it, type it in and save yourself few euros.')
     print('If you don\'t type in anything to skip to the payment.')
     print('(Shhhh, its: CI2023)')
     check_coder = input('\n: ')
