@@ -23,6 +23,9 @@ existing_regplates = business.col_values(1)
 # Pattern of the regplates to enter.
 reg_plates_pattern = '[A-Z]{2,4}[-][0-9]{3,5}[-][A-Z]{2}'
 
+# Pattern for special characters
+spec_char = '[\\s !@#$%^&*()_=~+|<,>./?\\]}\\[{]'
+
 # Pattern for parking duration.
 time_pattern = '^\\d+$'
 
@@ -162,21 +165,25 @@ def enter_regplate():
     # List of registration numbers within the sheet
     existing_regplates = business.col_values(1)
     reg_plates = input('\nEnter registration number\n: ')
-    # checking the list of existing reg. numbers
-    if reg_plates not in existing_regplates:
-        # validating the reg. pattern.
-        if (re.search(reg_plates_pattern, reg_plates)):
-            print('\n\nRegistration number is valid!\n')
-            driver_details.insert(0, reg_plates)  # Add reg_plates to the list.
-        else:
-            print('\nSorry, invalid input!')
-            return enter_regplate()
+    if (re.search(spec_char, reg_plates)):
+        print('\nInvalid input!')
+        enter_regplate()
     else:
-        print('\nRegistration number is already in our system!\n')
-        print('You either have to pay your debt')
-        print('to be able to park here again')
-        print('or re-enter your reg. number if you made a mistake.')
-        reg_check(reg_plates)
+        # checking the list of existing reg. numbers
+        if reg_plates not in existing_regplates:
+            # validating the reg. pattern.
+            if (re.search(reg_plates_pattern, reg_plates)):
+                print('\n\nRegistration number is valid!\n')
+                driver_details.insert(0, reg_plates)  # Add reg_plates to the list.
+            else:
+                print('\nSorry, invalid input!')
+                return enter_regplate()
+        else:
+            print('\nRegistration number is already in our system!\n')
+            print('You either have to pay your debt')
+            print('to be able to park here again')
+            print('or re-enter your reg. number if you made a mistake.')
+            reg_check(reg_plates)
 
 
 def reg_check(data):
@@ -361,8 +368,8 @@ def drivers_choice():
         driver = input('Please enter 1 or 2\n: ')
         driver_int = int(driver)
 
-        if (re.findall("[+]", driver)):
-            print('\nDon\'t use prefix plus.\n')
+        if (re.findall('[\\s +]', driver)):
+            print('\nInvalid input!\n')
             drivers_choice()
         elif driver_int == 1:
             parking_prices()  # Calling list of the rules and prices.
