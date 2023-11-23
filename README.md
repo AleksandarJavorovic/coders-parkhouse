@@ -14,10 +14,6 @@ Coders Parkhouse is a Python Terminal Application which should simulate a real l
 
 ### [**Flowcharts**](#flowcharts)
 
-- [Initial Flowcharts](#initial-flowcharts)
-- [Final Flowcharts](#final-flowcharts)
-
-
 ### [**Features**](#features-aa)
 
 ### [**Technologies Used**](#technologies-used-aa)
@@ -71,7 +67,7 @@ Using of this application is pretty straight forward as it would be to use parki
   - Be kind to the customers.
   - Be able to offer small discount to the customers.
 
-### **Flowcharts**
+## **Flowcharts**
 
 - **Initial Flowcharts**
 
@@ -92,3 +88,33 @@ Using of this application is pretty straight forward as it would be to use parki
 
     ![Final Flowcharts](/assets/images/flowcharts/coders-parkhouse-flow-diagram-improved.png)
     </details>
+
+## <a id="features-aa"></a>**Features**
+
+When you go to [Coders Parkhouse](https://coders-parkhouse-e4a324d9bf40.herokuapp.com/), this is what is waiting for you.
+
+### **Welcome to Coders Parkhouse**
+
+At the entrance/exit you are being greeted and two options are being given to you:
+  1. To park the car.
+  2. To leave the parking lot.
+  - ![Entrance/Exit](/assets/images/features/feature1-welcome.png)
+
+### **Park the car**
+
+- If you choose to park the car, the rules of the parking house are being displayed to you. You are also being asked if you accept to the terms of use, which you can accept or reject and search for a better place to park.
+- ![Rules](/assets/images/features/feature2-rules.png)
+
+- If you reject the terms of use, you will be greeted nicely.
+- ![Rules No](/assets/images/features/feature3-rules-no.png)
+
+- If you accept and you do want to park here, you will be taken to the next step.
+- ![Rules Yes](/assets/images/features/feature4-rules-yes-regplate-entry.png)
+
+### **Entering Registration Number**
+
+- Here you must enter your registration number but according to one of the four given patterns. Instructions are telling you to use letters, digits and dashes only, other characters will trigger Invalid Input.
+
+- In case you use valid pattern for your registration number, you can have 2 scenarios:
+  1. 
+- ![Rules Yes](/assets/images/features/feature5-regplates-valid-not-existing-hours.png)
