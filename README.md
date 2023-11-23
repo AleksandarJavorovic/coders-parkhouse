@@ -135,12 +135,22 @@ At the entrance/exit you are being greeted and two options are being given to yo
 
 ### **Parking Duration(Hours)**
 
-- ![Regplates Valid Existing New](/assets/images/features/feature5-regplates-valid-not-existing-hours.png)
+- ![Regplates Valid Hours](/assets/images/features/feature5-regplates-valid-not-existing-hours.png)
 - When we manage to pay off our dept (^.-) and we enter the valid reg. number, we need to enter number of hours or let's say duration of our parking. In this case the number is unlimited.
-- ![Regplates Valid Existing New](/assets/images/features/feature6-hours-info.png)
+- ![Hours Info](/assets/images/features/feature6-hours-info.png)
 
 - In the background there is a list in program which holds the registration number, number of hours and price which is calculated according to the hours we enter.
-- Price is calculated as: number of hours * 3euro
+- At this moment the list is being inserted into the google sheet.
+- Price is calculated as: Hours * 3euro
 - In this step the we are also presented with the total info about our parking.
 
+### **Return/NotYet**
+
+- After we are presented with the info in the end, we have two options:
+
+  1. To leave, in this case we are typing in "not yet".
+  - ![Not Yet](/assets/images/features/feature11-not-yet.png)
+
+  2. Second option is to type in "return", to get back to the parking lot to pick up our car. It brings us to the beginning of our application.
+  - ![Return](/assets/images/features/feature12-return.png)
 
