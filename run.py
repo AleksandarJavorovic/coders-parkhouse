@@ -71,8 +71,8 @@ def farewell_message():
     Function which prints out farewell message and exits the program.
     '''
     print('\nHave a nice day! Until the next time! :)')
-    print(r''' ___   _     ____      ___   _     ____ 
-| |_) \ \_/ | |_      | |_) \ \_/ | |_  
+    print(r''' ___   _     ____      ___   _     ____
+| |_) \ \_/ | |_      | |_) \ \_/ | |_
 |_|_)  |_|  |_|__     |_|_)  |_|  |_|__ ''')
     quit()
 
