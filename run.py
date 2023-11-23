@@ -23,9 +23,6 @@ existing_regplates = business.col_values(1)
 # Pattern of the regplates to enter.
 reg_plates_pattern = '^[A-Z]{2,3}[-][0-9]{3,4}[-][A-Z]{2}$'
 
-# Pattern for special characters
-spec_char = '[\\s !@#$%^&*()_=~+|<,>./?\\]}\\[{]'
-
 # Pattern for parking duration.
 time_pattern = '^\\d+$'
 
@@ -81,7 +78,6 @@ def parking_info_presentation(data):
     '''
     Function to present info to the driver.
     Registration number, duration and price.
-    Creating dict. out of 2 lists.
     '''
     for i in range(3):
         print(parking_info[i], data[i])
