@@ -307,7 +307,7 @@ def driver_coder(data, price):
     driver knows the secret code. :)
     '''
     print('Hey, one thing I want to tell you.')
-    print('I think you work Code Institute.')
+    print('I think you work for Code Institute.')
     print('Do you know about the code for 10⁒ discount')
     print('we gave them long time ago?')
     print('If you know it, type it in and save yourself few euros.')
