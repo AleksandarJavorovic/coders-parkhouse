@@ -120,7 +120,15 @@ At the entrance/exit you are being greeted and two options are being given to yo
   - ![Regplates Valid Not Existing](/assets/images/features/feature5-regplates-valid-not-existing-hours.png)
 
 
-  2. You type in valid registration number, but you find out there is a debt from the last time, which you need to take care of, so that you can park here again.
+  2. You type in valid registration number, but you find out there is a debt from the last time, which you need to take care of, so that you can park here again. Behind the scenes the code is checking if the given registration is already inside the google sheet. In this case it is which represents your "debt".
   - ![Regplates Valid Existing](/assets/images/features/feature8-regplate-existing.png)
 
-  
+### **Paying Debt/Actually Mistake**
+
+- You have 2 options here to pay your debt, to be able to park again or to type in your registration number again because actually it was a typo.
+
+  1. If you choose to pay your debt, after the transaction is over, you will be able to enter your registration number again and park as you wish. In reality the reg. number is getting deleted from the google sheet, so you are able to enter with the same registration again.
+  - ![Regplates Valid Existing Paying](/assets/images/features/feature10-regplates-existing-pay.png)
+
+  2. If you actually made a mistake and you choose "new". You will be taken back to enter your registration number again.
+  - ![Regplates Valid Existing New](/assets/images/features/feature9-regplate-existing-no.png)
