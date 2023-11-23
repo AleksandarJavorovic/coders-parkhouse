@@ -11,6 +11,7 @@ Coders Parkhouse is a Python Terminal Application which should simulate a real l
 ### [**User Experience (UX)**](#user-experience-ux-aa)
 
 - [User Stories](#user-stories)
+- [Flowcharts](#flowcharts)
 
 ### [**Features**](#features-aa)
 
@@ -32,3 +33,35 @@ Coders Parkhouse is a Python Terminal Application which should simulate a real l
 
 - [Content](#content)
 - [Media](#media)
+
+## <a id="user-experience-ux-aa"></a>**User Experience (UX)**
+
+Using of this application is pretty straight forward as it would be to use parking lot services in real life. Driver/User is greeted with the ASCII art at the entrance letting the driver know where he is.
+
+### **User Stories**
+
+- **User/Driver goals**
+
+  - Be able to enter/leave parking lot.
+  - Be able to see the prices at the entrance.
+  - Be able to park for cheap price.
+  - Be able to use automated parking system.
+  - Be able to understand instructions easily.
+  - Be able to enter registration into predetermined template.
+  - Be able to know time(duration) of parking.
+  - Be able to know total cost of the parking.
+  - Be able to get some discount in case he is an developer. :)
+
+- **Creator/Owner goals**
+
+  - Present own services in understandable manner.
+  - Instuctions to be intuitive.
+  - Handle possible invalid inputs from customers.
+  - Prices to be competitive.
+  - Offer to the user to reject if he isn't satisfied with the prices.
+  - Track the time spent on the parking lot.
+  - Calculating the price automatically according to the time spent.
+  - Have the track of the cars on the lot.
+  - Have the track of previous debts of certain cars(imaginary).
+  - Be kind to the customers.
+  - Be able to offer small discount to the customers.
