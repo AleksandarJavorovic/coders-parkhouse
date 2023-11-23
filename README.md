@@ -132,3 +132,15 @@ At the entrance/exit you are being greeted and two options are being given to yo
 
   2. If you actually made a mistake and you choose "new". You will be taken back to enter your registration number again.
   - ![Regplates Valid Existing New](/assets/images/features/feature9-regplate-existing-no.png)
+
+### **Parking Duration(Hours)**
+
+- ![Regplates Valid Existing New](/assets/images/features/feature5-regplates-valid-not-existing-hours.png)
+- When we manage to pay off our dept (^.-) and we enter the valid reg. number, we need to enter number of hours or let's say duration of our parking. In this case the number is unlimited.
+- ![Regplates Valid Existing New](/assets/images/features/feature6-hours-info.png)
+
+- In the background there is a list in program which holds the registration number, number of hours and price which is calculated according to the hours we enter.
+- Price is calculated as: number of hours * 3euro
+- In this step the we are also presented with the total info about our parking.
+
+
