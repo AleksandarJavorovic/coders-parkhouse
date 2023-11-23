@@ -116,5 +116,11 @@ At the entrance/exit you are being greeted and two options are being given to yo
 - Here you must enter your registration number but according to one of the four given patterns. Instructions are telling you to use letters, digits and dashes only, other characters will trigger Invalid Input.
 
 - In case you use valid pattern for your registration number, you can have 2 scenarios:
-  1. 
-- ![Rules Yes](/assets/images/features/feature5-regplates-valid-not-existing-hours.png)
+  1. You type in valid registration number and you can go further to enter the parking duration.
+  - ![Regplates Valid Not Existing](/assets/images/features/feature5-regplates-valid-not-existing-hours.png)
+
+
+  2. You type in valid registration number, but you find out there is a debt from the last time, which you need to take care of, so that you can park here again.
+  - ![Regplates Valid Existing](/assets/images/features/feature8-regplate-existing.png)
+
+  
