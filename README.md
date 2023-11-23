@@ -11,7 +11,12 @@ Coders Parkhouse is a Python Terminal Application which should simulate a real l
 ### [**User Experience (UX)**](#user-experience-ux-aa)
 
 - [User Stories](#user-stories)
-- [Flowcharts](#flowcharts)
+
+### [**Flowcharts**](#flowcharts)
+
+- [Initial Flowcharts](#initial-flowcharts)
+- [Final Flowcharts](#final-flowcharts)
+
 
 ### [**Features**](#features-aa)
 
@@ -65,3 +70,25 @@ Using of this application is pretty straight forward as it would be to use parki
   - Have the track of previous debts of certain cars(imaginary).
   - Be kind to the customers.
   - Be able to offer small discount to the customers.
+
+### **Flowcharts**
+
+- **Initial Flowcharts**
+
+  - Flowcharts used as a base for development process.
+    <details>
+    <summary>Initial Flowcharts
+    </summary>
+
+    ![Initial Flowcharts](/assets/images/flowcharts/coders-parkhouse-flow-diagram.png)
+    </details>
+
+- **Final Flowcharts**
+
+  - Flowcharts after all desired functions were implemented.
+    <details>
+    <summary>Final Flowcharts
+    </summary>
+
+    ![Final Flowcharts](/assets/images/flowcharts/coders-parkhouse-flow-diagram-improved.png)
+    </details>
