@@ -33,7 +33,7 @@ time_pattern = '^\\d+$'
 driver_details = []
 
 # List to help present information to the driver.
-parking_info = ['Registration', 'Hours', 'Price in €']
+parking_info = ['Registration:', 'Hours:', 'Price in €:']
 
 
 def parking_prices():
@@ -83,8 +83,8 @@ def parking_info_presentation(data):
     Registration number, duration and price.
     Creating dict. out of 2 lists.
     '''
-    driver_info = {parking_info[i]: data[i] for i in range(len(parking_info))}
-    print(driver_info)
+    for i in range(3):
+        print(parking_info[i], data[i])
 
 
 def initial_time_function():
