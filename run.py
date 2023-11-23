@@ -70,7 +70,10 @@ def farewell_message():
     '''
     Function which prints out farewell message and exits the program.
     '''
-    print('\nHave a nice day! Until the next time! :)\n')
+    print('\nHave a nice day! Until the next time! :)')
+    print(r''' ___   _     ____      ___   _     ____ 
+| |_) \ \_/ | |_      | |_) \ \_/ | |_  
+|_|_)  |_|  |_|__     |_|_)  |_|  |_|__ ''')
     quit()
 
 
@@ -350,6 +353,12 @@ def drivers_choice():
     Function also handles possible errors and returns
     the driver to chose between 1 and 2.
     '''
+    print(r''' __    ___   ___   ____  ___   __
+/ /`  / / \ | | \ | |_  | |_) ( (`
+\_\_, \_\_/ |_|_/ |_|__ |_| \ _)_)''')
+    print(r''' ___    __    ___   _     _     ___   _     __   ____
+| |_)  / /\  | |_) | |_/ | |_| / / \ | | | ( (` | |_
+|_|   /_/--\ |_| \ |_| \ |_| | \_\_/ \_\_/ _)_) |_|__ ''')
     print('\nHello there and welcome to the Coders Parkhouse.\n')
     print('What would you like to do?')
     print('1. Park the car\n2. Leave the parking lot\n')
