@@ -527,5 +527,65 @@ Software used to validate the Pythone code is PEP8CI - Python Linter, mentioned 
     <td>Invalid Input! Sorry but " " is not an option!</td>
     <td>Confirmed</td>
   </tr>
+  <tr>
+    <td>Number of Hours</td>
+    <td>0</td>
+    <td>Zero is not an option, sorry.</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Number of Hours</td>
+    <td>0.2</td>
+    <td>Use only didigts 0-9, only whole numbers please. No special signs neither.</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Number of Hours</td>
+    <td>#</td>
+    <td>Use only didigts 0-9, only whole numbers please. No special signs neither.</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Number of Hours</td>
+    <td>!</td>
+    <td>Use only didigts 0-9, only whole numbers please. No special signs neither.</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Number of Hours</td>
+    <td>Empty space</td>
+    <td>Use only didigts 0-9, only whole numbers please. No special signs neither.</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Number of Hours</td>
+    <td>Any special character</td>
+    <td>Use only didigts 0-9, only whole numbers please. No special signs neither.</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Number of Hours</td>
+    <td>python</td>
+    <td>Use only didigts 0-9, only whole numbers please. No special signs neither.</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Number of Hours</td>
+    <td>1</td>
+    <td>Very well! Try not to be late, otherwise it will be more expensive.</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Number of Hours</td>
+    <td>5</td>
+    <td>Very well! Try not to be late, otherwise it will be more expensive.</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Number of Hours</td>
+    <td>999</td>
+    <td>Very well! Try not to be late, otherwise it will be more expensive.</td>
+    <td>Confirmed</td>
+  </tr>
 </tbody>
 </table>
