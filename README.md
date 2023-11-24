@@ -140,9 +140,9 @@ At the entrance/exit you are being greeted and two options are being given to yo
 - ![Hours Info](/assets/images/features/feature6-hours-info.png)
 
 - In the background there is a list in program which holds the registration number, number of hours and price which is calculated according to the hours we enter.
-- At this moment the list is being inserted into the google sheet.
 - Price is calculated as: Hours * 3euro
-- In this step the we are also presented with the total info about our parking.
+- At this moment the list is being inserted into the google sheet.
+- In this step the info about our parking is being presented to us.
 
 ### **Return/NotYet**
 
