@@ -270,10 +270,11 @@ def final_price_count(data):
     print('1. Earlier\n2. On point\n3. Later')
     print('Type in 1, 2, or 3.')
     real_duration = input('\n: ')
+    real_duration_len = len(real_duration)
     try:
-        # checking for the + prefix
-        if (re.findall("[+]", real_duration)):
-            print('\nDon\'t use prefix plus.\n')
+        # taking care there are no other characters besides 1,2 or 3.
+        if real_duration_len > 1:
+            print("\nInvalid input! No empty spaces, no special signs.")
             final_price_count(data)
         # earlier
         elif int(real_duration) == 1:
