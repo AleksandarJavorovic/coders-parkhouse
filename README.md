@@ -31,8 +31,9 @@ Coders Parkhouse is a Python Terminal Application which should simulate a real l
 
 ### [**Technologies Used**](#technologies-used-aa)
 
-- [Languages Used](#languages-used)
-- [Frameworks, Libraries and Programs Used](#frameworks-libraries-and-programs-used)
+- [Languages](#languages)
+- [Libraries](#libraries)
+- [Frameworks and Other Programs](#frameworks-and-other-programs)
 
 ### [**Testing**](#testing-aa)
 
@@ -253,7 +254,7 @@ At the entrance/exit you are being greeted and two options are being given to yo
 
 ## <a id="technologies-used-aa"></a>**Technologies Used**
 
-### **Languages Used**
+### **Languages**
 
 - Python
 - JavaScript (used by template creator)
@@ -268,7 +269,7 @@ At the entrance/exit you are being greeted and two options are being given to yo
 - [regex](https://docs.python.org/3/howto/regex.html)
   - Regular Expression used for setting up patterns.
 
-### **Frameworks and Programs Used**
+### **Frameworks and Other Programs**
 
 - [Git](https://git-scm.com/)
    - Used for version control, commit to Git and Push to GitHub.
@@ -286,3 +287,32 @@ At the entrance/exit you are being greeted and two options are being given to yo
    - Used to create mockup image for the README file.
 - [Text to ASCII Art Generator](https://www.patorjk.com/software/taag/#p=display&f=Broadway%20KB&t=Coders%20Parkhouse)
   - Used to create ASCII art for welcoming and farewell messages.
+
+## <a id="testing-aa"></a>**Testing**
+
+Software used to validate the Pythone code is PEP8CI - Python Linter, mentioned in the Frameworks and Other Programs section above.
+
+### **Validation Results**
+
+  - Before:
+    <details>
+    <summary>Linter Errors 1
+    </summary>
+    
+    ![Linter Errors 1](/assets/images/bugs/linter-errors-1.png)
+    </details>
+
+    <details>
+    <summary>Linter Errors 2
+    </summary>
+    
+    ![Linter Errors 2](/assets/images/bugs/linter-errors-2.png)
+    </details>
+
+  - After:
+      <details>
+      <summary>Linter No Errors
+      </summary>
+      
+      ![Linter No Errors](/assets/images/bugs/linter-all-good.png)
+      </details>
