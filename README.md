@@ -797,5 +797,83 @@ Software used to validate the Pythone code is PEP8CI - Python Linter, mentioned 
     <td>Your final price should be X€.</td>
     <td>Confirmed</td>
   </tr>
+  <tr>
+    <td>Discount Code</td>
+    <td>123</td>
+    <td>Looks like your boss doesn't like you so much. :(</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Discount Code</td>
+    <td>#</td>
+    <td>Looks like your boss doesn't like you so much. :(</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Discount Code</td>
+    <td>Empty space</td>
+    <td>Looks like your boss doesn't like you so much. :(</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Discount Code</td>
+    <td>Any special character</td>
+    <td>Looks like your boss doesn't like you so much. :(</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Discount Code</td>
+    <td>CI2023/ci2023</td>
+    <td>Looks like your boss likes you. :)</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Pay at Exit</td>
+    <td>0</td>
+    <td>Sorry, until you pay, you can't drive out! :)</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Pay at Exit</td>
+    <td>#</td>
+    <td>Sorry, until you pay, you can't drive out! :)</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Pay at Exit</td>
+    <td>Empty space</td>
+    <td>Sorry, until you pay, you can't drive out! :)</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Pay at Exit</td>
+    <td>Empty space + "pay"</td>
+    <td>Sorry, until you pay, you can't drive out! :)</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Pay at Exit</td>
+    <td>pay_</td>
+    <td>Sorry, until you pay, you can't drive out! :)</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Pay at Exit</td>
+    <td>pay+</td>
+    <td>Sorry, until you pay, you can't drive out! :)</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Pay at Exit</td>
+    <td>Any special character</td>
+    <td>Sorry, until you pay, you can't drive out! :)</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Pay at Exit</td>
+    <td>pay</td>
+    <td>Paying...Complete! Have a nice day! Until next time!</td>
+    <td>Confirmed</td>
+  </tr>
 </tbody>
 </table>
