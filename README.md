@@ -16,6 +16,18 @@ Coders Parkhouse is a Python Terminal Application which should simulate a real l
 
 ### [**Features**](#features-aa)
 
+- [Welcome to Coders Parkhouse](#welcome-to-coders-parkhouse)
+- [Park the car](#park-the-car)
+- [Entering Registration Number](#entering-registration-number)
+- [Paying Debt/Actually Mistake](#paying-debtactually-mistake)
+- [Parking Duration(Hours)](#parking-durationhours)
+- [Return/NotYet](#returnnotyet)
+- [Leave Parking Lot](#leave-parking-lot)
+- [Parking Details](#parking-details)
+- [Time of Arrival](#time-of-arrival)
+- [Discount Code](#discount-code)
+- [Pay at Exit](#pay-at-exit)
+
 ### [**Technologies Used**](#technologies-used-aa)
 
 - [Languages Used](#languages-used)
@@ -51,7 +63,7 @@ Using of this application is pretty straight forward as it would be to use parki
   - Be able to enter registration into predetermined template.
   - Be able to know time(duration) of parking.
   - Be able to know total cost of the parking.
-  - Be able to get some discount in case he is an developer. :)
+  - Be able to get some discount. :)
 
 - **Creator/Owner goals**
 
@@ -170,14 +182,16 @@ At the entrance/exit you are being greeted and two options are being given to yo
   - Here we have 2 scenarios again, where the driver will be able to type in again the reg. number in case he made a typo or he can freely walk away in case he missed the parking lot(^_^).
 
     - Re-enter the registration number
-    - ![Re-enter Reg Number](/assets/images/features/feature22-regplates-not-existing-yes.png)
+      - I you type in "yes".
+      - ![Re-enter Reg Number](/assets/images/features/feature22-regplates-not-existing-yes.png)
 
     - Walk away
-    - ![Walk Away](/assets/images/features/feature21-regplates-not-existing-no.png)
+      - If you type in "no".
+      - ![Walk Away](/assets/images/features/feature21-regplates-not-existing-no.png)
   
   - **Registration Existing**
-  - This will lead to details being loaded(we are loading info from the google sheet).
-  - ![Registration Existing](/assets/images/features/feature24.png)
+    - This will lead to details being loaded(we are loading info from the google sheet).
+    - ![Registration Existing](/assets/images/features/feature24.png)
 
 
 ### **Parking Details**
@@ -194,11 +208,11 @@ At the entrance/exit you are being greeted and two options are being given to yo
 
 - **Earlier/On Point**
   
-    - ![Earlier/On Point](/assets/images/features/feature15-1.png)
+- ![Earlier/On Point](/assets/images/features/feature15-1.png)
 
 - **Later**
 
-  - ![Later](/assets/images/features/feature16-3.png)
+- ![Later](/assets/images/features/feature16-3.png)
 
 ### **Discount Code**
 
