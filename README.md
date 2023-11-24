@@ -877,3 +877,45 @@ Software used to validate the Pythone code is PEP8CI - Python Linter, mentioned 
   </tr>
 </tbody>
 </table>
+
+### **Fixed Bugs**
+
+- **Bug 1:**
+  - Multiple lists written into the google sheet, after the driver would "return" and use same registration in the registration input section, after paying the debt off.
+
+    <details>
+    <summary>Bug 1 Image
+    </summary>
+        
+    ![Linter No Errors](/assets/images/bugs/bug-before-clearing-the-list.png)
+    </details>
+
+- **Fix 1:**
+  - This was sorted with clear() method on the list which holds the driver details, before "return" part of the application.
+
+    <details>
+    <summary>Fix 1 Image
+    </summary>
+          
+    ![Linter No Errors](/assets/images/bugs/list-cleared.png)
+    </details>
+
+- **Bug 2:**
+  - In the Time of Arrival part of program, when user has to choose between options Earlier, On Point and Later, by inputing 1, 2, or 3. The program would accept multiple empty spaces before and after 1, 2, or 3.
+
+    <details>
+    <summary>Bug 2 Image
+    </summary>
+          
+    ![Linter No Errors](/assets/images/bugs/bug123.png)
+    </details>
+
+- **Fix 2:**
+  - It was sorted out by using len() method on the real_duration string, and if statement insuring that it's lenght is not bigger than 1.
+
+    <details>
+    <summary>Fix 2 Image
+    </summary>
+          
+    ![Linter No Errors](/assets/images/bugs/empty-spaces-solution.png)
+    </details>
