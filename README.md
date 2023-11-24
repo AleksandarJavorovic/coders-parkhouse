@@ -881,6 +881,7 @@ Software used to validate the Pythone code is PEP8CI - Python Linter, mentioned 
 ### **Fixed Bugs**
 
 - **Bug 1:**
+
   - Multiple lists written into the google sheet, after the driver would "return" and use same registration in the registration input section, after paying the debt off.
 
     <details>
@@ -891,6 +892,7 @@ Software used to validate the Pythone code is PEP8CI - Python Linter, mentioned 
     </details>
 
 - **Fix 1:**
+
   - This was sorted with clear() method on the list which holds the driver details, before "return" part of the application.
 
     <details>
@@ -901,6 +903,7 @@ Software used to validate the Pythone code is PEP8CI - Python Linter, mentioned 
     </details>
 
 - **Bug 2:**
+
   - In the Time of Arrival part of program, when user has to choose between options Earlier, On Point and Later, by inputing 1, 2, or 3. The program would accept multiple empty spaces before and after 1, 2, or 3.
 
     <details>
@@ -911,6 +914,7 @@ Software used to validate the Pythone code is PEP8CI - Python Linter, mentioned 
     </details>
 
 - **Fix 2:**
+
   - It was sorted out by using len() method on the real_duration string, and if statement insuring that it's lenght is not bigger than 1.
 
     <details>
@@ -918,4 +922,27 @@ Software used to validate the Pythone code is PEP8CI - Python Linter, mentioned 
     </summary>
           
     ![Linter No Errors](/assets/images/bugs/empty-spaces-solution.png)
+    </details>
+
+- **Bug 3:**
+
+  - While entering the registration number in case of parking or leaving the parking lot, the program would accept registration as valid as long as it would contain the number of correct pattern even if before and after the registration number would be special characters.
+  - For example: ###XY-123-XY%%% would be accepted, ___XYZ-1234-XY//.#@ would be accepted and so on...
+
+    <details>
+    <summary>Bug 3 Image
+    </summary>
+          
+    ![Linter No Errors](/assets/images/bugs/crazy-pattern.png)
+    </details>
+
+- **Fix 3:**
+
+  - This was fixed by adding the special characters for start and end of the pattern within the string, which represents my registration numbers pattern.('^---pattern---$')
+
+    <details>
+    <summary>Fix 3 Image
+    </summary>
+          
+    ![Linter No Errors](/assets/images/bugs/pattern-solution.png)
     </details>
