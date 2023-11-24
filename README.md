@@ -44,6 +44,9 @@ Coders Parkhouse is a Python Terminal Application which should simulate a real l
 
 ### [**Deployment and local development**](#deployment-and-local-development-aa)
 
+- [Deploying to Heroku](#deploying-to-heroku)
+- [Forking the GitHub Repository](#forking-the-github-repository)
+
 ### [**Credits**](#credits-aa)
 
 - [Content](#content)
