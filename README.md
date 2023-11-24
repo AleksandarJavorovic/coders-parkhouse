@@ -332,19 +332,19 @@ Software used to validate the Pythone code is PEP8CI - Python Linter, mentioned 
   <tr>
     <td>Application Loads</td>
     <td>No Input</td>
-    <td>Welcoming menu is presented</td>
+    <td>Welcoming menu is presented.</td>
     <td>Confirmed</td>
   </tr>
   <tr>
     <td>Welcoming Options</td>
     <td>1</td>
-    <td>Driver chooses to park</td>
+    <td>Driver chooses to park.</td>
     <td>Confirmed</td>
   </tr>
   <tr>
     <td>Welcoming Options</td>
     <td>2</td>
-    <td>Driver chooses to leave</td>
+    <td>Driver chooses to leave.</td>
     <td>Confirmed</td>
   </tr>
   <tr>
@@ -356,19 +356,19 @@ Software used to validate the Pythone code is PEP8CI - Python Linter, mentioned 
   <tr>
     <td>Welcoming Options</td>
     <td>#</td>
-    <td>You must choose between numbers 1 and 2</td>
+    <td>You must choose between numbers 1 and 2.</td>
     <td>Confirmed</td>
   </tr>
   <tr>
     <td>Welcoming Options</td>
     <td>Any special character</td>
-    <td>You must choose between numbers 1 and 2</td>
+    <td>You must choose between numbers 1 and 2.</td>
     <td>Confirmed</td>
   </tr>
   <tr>
     <td>Parking Rules</td>
     <td>yes</td>
-    <td>Proceeds to registration entry</td>
+    <td>Proceeds to registration entry.</td>
     <td>Confirmed</td>
   </tr>
   <tr>
@@ -380,25 +380,25 @@ Software used to validate the Pythone code is PEP8CI - Python Linter, mentioned 
   <tr>
     <td>Parking Rules</td>
     <td>1</td>
-    <td>Please answer with yes or no</td>
+    <td>Please answer with yes or no.</td>
     <td>Confirmed</td>
   </tr>
   <tr>
     <td>Parking Rules</td>
     <td>#</td>
-    <td>Please answer with yes or no</td>
+    <td>Please answer with yes or no.</td>
     <td>Confirmed</td>
   </tr>
   <tr>
     <td>Parking Rules</td>
     <td>Empty space</td>
-    <td>Please answer with yes or no</td>
+    <td>Please answer with yes or no.</td>
     <td>Confirmed</td>
   </tr>
   <tr>
     <td>Parking Rules</td>
     <td>Any special character</td>
-    <td>Please answer with yes or no</td>
+    <td>Please answer with yes or no.</td>
     <td>Confirmed</td>
   </tr>
   <tr>
@@ -452,19 +452,19 @@ Software used to validate the Pythone code is PEP8CI - Python Linter, mentioned 
   <tr>
     <td>Reg. Number Input</td>
     <td>XY-12345-XY</td>
-    <td>Please use one of the given patterns</td>
+    <td>Please use one of the given patterns.</td>
     <td>Confirmed</td>
   </tr>
   <tr>
     <td>Reg. Number Input</td>
     <td>XYZABC-12345-ZZXY</td>
-    <td>Please use one of the given patterns</td>
+    <td>Please use one of the given patterns.</td>
     <td>Confirmed</td>
   </tr>
   <tr>
     <td>Reg. Number Input</td>
     <td>XY- 1 2 3-XY</td>
-    <td>Please use one of the given patterns</td>
+    <td>Please use one of the given patterns.</td>
     <td>Confirmed</td>
   </tr>
   <tr>
@@ -500,7 +500,7 @@ Software used to validate the Pythone code is PEP8CI - Python Linter, mentioned 
   <tr>
     <td>Pay Debt/ New</td>
     <td>new</td>
-    <td>Back to Registration Number Input</td>
+    <td>Back to Registration Number Input.</td>
     <td>Confirmed</td>
   </tr>
   <tr>
@@ -585,6 +585,54 @@ Software used to validate the Pythone code is PEP8CI - Python Linter, mentioned 
     <td>Number of Hours</td>
     <td>999</td>
     <td>Very well! Try not to be late, otherwise it will be more expensive.</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Return/Not Yet</td>
+    <td>#</td>
+    <td>Invalid Input!</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Return/Not Yet</td>
+    <td>Empty space</td>
+    <td>Invalid Input!</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Return/Not Yet</td>
+    <td>1</td>
+    <td>Invalid Input!</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Return/Not Yet</td>
+    <td>mama</td>
+    <td>Invalid Input!</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Return/Not Yet</td>
+    <td>Any special character</td>
+    <td>Invalid Input!</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Return/Not Yet</td>
+    <td>return_</td>
+    <td>Invalid Input!</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Return/Not Yet</td>
+    <td>return</td>
+    <td>Welcoming menu is presented.</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Return/Not Yet</td>
+    <td>not yet</td>
+    <td>Ok, see ya later!</td>
     <td>Confirmed</td>
   </tr>
 </tbody>
