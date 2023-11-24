@@ -154,11 +154,19 @@ At the entrance/exit you are being greeted and two options are being given to yo
   2. Second option is to type in "return", to get back to the parking lot to pick up our car. It brings us to the beginning of our application.
   - ![Return](/assets/images/features/feature12-return.png)
 
-### **Leaveing Parking Lot**
+### **Leave Parking Lot**
 
 - After we come back to pick up our car, either by entering "return" at the end of our parking process or by restarting the program and we choose the option number two, to leave the parking lot, we need to enter our registrations again.
 - By entering our reg. number again, the system is checking if the reg. number is in the google sheet(did we park here at all).
-- ![Return](/assets/images/features/feature13-regplatesleave.png)
+- ![Leaveing Parking Lot](/assets/images/features/feature13-regplatesleave.png)
+
+### **Parking Details, Time of Arrival**
+
+- ![Details Loading](/assets/images/features/feature14-details-loading.png)
+
+- When we enter registration number which is present in our system, we are getting full initial details about our parking.
+- In the background the system is reading from the google sheet and pulling the row according to the registration number.
+- After that we can choose between three possible scenarios, which represent our time of arrival.
 
 
 
