@@ -160,13 +160,27 @@ At the entrance/exit you are being greeted and two options are being given to yo
 - By entering our reg. number again, the system is checking if the reg. number is in the google sheet(did we park here at all).
 - ![Leaveing Parking Lot](/assets/images/features/feature13-regplatesleave.png)
 
-### **Parking Details, Time of Arrival**
+### **Parking Details**
 
 - ![Details Loading](/assets/images/features/feature14-details-loading.png)
 
 - When we enter registration number which is present in our system, we are getting full initial details about our parking.
 - In the background the system is reading from the google sheet and pulling the row according to the registration number.
 - After that we can choose between three possible scenarios, which represent our time of arrival.
+
+### **Time of Arrival**
+
+- According to the option we choose here, our price will be calculated. Meaning if we choose Earlier or On Point the price will actually be the same as the initial one, while if we choose Later, a fee of 10€ will be added to the initial price(the price here is calculated accodring to our parking rules).
+
+- **Earlier/On Point**
+  
+    - ![Details Loading](/assets/images/features/feature15-1.png)
+
+- **Later**
+
+  - ![Details Loading](/assets/images/features/feature16-3.png)
+
+
 
 
 
