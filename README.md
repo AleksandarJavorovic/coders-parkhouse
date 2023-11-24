@@ -316,3 +316,216 @@ Software used to validate the Pythone code is PEP8CI - Python Linter, mentioned 
       
       ![Linter No Errors](/assets/images/bugs/linter-all-good.png)
       </details>
+
+### **Manual Testing**
+
+<table>
+<thead>
+  <tr>
+    <th>Feature</th>
+    <th>User Input/State</th>
+    <th>Output</th>
+    <th>Result</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Application Loads</td>
+    <td>No Input</td>
+    <td>Welcoming menu is presented</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Welcoming Options</td>
+    <td>1</td>
+    <td>Driver chooses to park</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Welcoming Options</td>
+    <td>2</td>
+    <td>Driver chooses to leave</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Welcoming Options</td>
+    <td>3</td>
+    <td>That's not an option!</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Welcoming Options</td>
+    <td>#</td>
+    <td>You must choose between numbers 1 and 2</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Welcoming Options</td>
+    <td>Any special character</td>
+    <td>You must choose between numbers 1 and 2</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Parking Rules</td>
+    <td>yes</td>
+    <td>Proceeds to registration entry</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Parking Rules</td>
+    <td>no</td>
+    <td>Farewell message</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Parking Rules</td>
+    <td>1</td>
+    <td>Please answer with yes or no</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Parking Rules</td>
+    <td>#</td>
+    <td>Please answer with yes or no</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Parking Rules</td>
+    <td>Empty space</td>
+    <td>Please answer with yes or no</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Parking Rules</td>
+    <td>Any special character</td>
+    <td>Please answer with yes or no</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Reg. Number Input</td>
+    <td>XY-123-XY</td>
+    <td>Reg. number is valid.(if not in system already)</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Reg. Number Input</td>
+    <td>XY-1234-XY</td>
+    <td>Reg. number is valid.(if not in system already)</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Reg. Number Input</td>
+    <td>XYZ-123-XY</td>
+    <td>Reg. number is valid.(if not in system already)</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Reg. Number Input</td>
+    <td>XYZ-1234-XY</td>
+    <td>Reg. number is valid.(if not in system already)</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Reg. Number Input</td>
+    <td>XY-123-XY</td>
+    <td>Reg. number is already in our system!(if it is present in the system aleady)</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Reg. Number Input</td>
+    <td>XY-1234-XY</td>
+    <td>Reg. number is already in our system!(if it is present in the system aleady)</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Reg. Number Input</td>
+    <td>XYZ-123-XY</td>
+    <td>Reg. number is already in our system!(if it is present in the system aleady)</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Reg. Number Input</td>
+    <td>XYZ-1234-XY</td>
+    <td>Reg. number is already in our system!(if it is present in the system aleady)</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Reg. Number Input</td>
+    <td>XY-12345-XY</td>
+    <td>Please use one of the given patterns</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Reg. Number Input</td>
+    <td>XYZABC-12345-ZZXY</td>
+    <td>Please use one of the given patterns</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Reg. Number Input</td>
+    <td>XY- 1 2 3-XY</td>
+    <td>Please use one of the given patterns</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Reg. Number Input</td>
+    <td>123-123-123</td>
+    <td>Sorry, Invalid Input!</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Reg. Number Input</td>
+    <td>#</td>
+    <td>Sorry, Invalid Input!</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Reg. Number Input</td>
+    <td>Empty space</td>
+    <td>Sorry, Invalid Input!</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Reg. Number Input</td>
+    <td>XY-123-XY!^$@</td>
+    <td>Sorry, Invalid Input!</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Pay Debt/ New</td>
+    <td>pay</td>
+    <td>Paying...Ok now you can park here again.</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Pay Debt/ New</td>
+    <td>new</td>
+    <td>Back to Registration Number Input</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Pay Debt/ New</td>
+    <td>no</td>
+    <td>Invalid Input! Sorry but "no" is not an option!</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Pay Debt/ New</td>
+    <td>#</td>
+    <td>Invalid Input! Sorry but "#" is not an option!</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Pay Debt/ New</td>
+    <td>new1</td>
+    <td>Invalid Input! Sorry but "new1" is not an option!</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Pay Debt/ New</td>
+    <td>Empty space</td>
+    <td>Invalid Input! Sorry but " " is not an option!</td>
+    <td>Confirmed</td>
+  </tr>
+</tbody>
+</table>
