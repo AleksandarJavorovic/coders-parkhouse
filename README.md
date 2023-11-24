@@ -743,5 +743,59 @@ Software used to validate the Pythone code is PEP8CI - Python Linter, mentioned 
     <td>Have a nice day! Until the next time!</td>
     <td>Confirmed</td>
   </tr>
+  <tr>
+    <td>Time of arrival (Options: 1, 2 or 3)</td>
+    <td>#</td>
+    <td>Invalid Input!</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Time of arrival (Options: 1, 2 or 3)</td>
+    <td>4</td>
+    <td>That's not an option.</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Time of arrival (Options: 1, 2 or 3)</td>
+    <td>0.5</td>
+    <td>Invalid Input!</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Time of arrival (Options: 1, 2 or 3)</td>
+    <td>Empty space</td>
+    <td>Invalid Input!</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Time of arrival (Options: 1, 2 or 3)</td>
+    <td>-1</td>
+    <td>That's not an option.</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Time of arrival (Options: 1, 2 or 3)</td>
+    <td>+1</td>
+    <td>Don't use prefix plus.</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Time of arrival (Options: 1, 2 or 3)</td>
+    <td>1</td>
+    <td>Your final price should be X€.</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Time of arrival (Options: 1, 2 or 3)</td>
+    <td>2</td>
+    <td>Your final price should be X€.</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Time of arrival (Options: 1, 2 or 3)</td>
+    <td>3</td>
+    <td>Your final price should be X€.</td>
+    <td>Confirmed</td>
+  </tr>
 </tbody>
 </table>
