@@ -50,7 +50,6 @@ Coders Parkhouse is a Python Terminal Application which should simulate a real l
 ### [**Credits**](#credits-aa)
 
 - [Content](#content)
-- [Media](#media)
 
 ## <a id="user-experience-ux-aa"></a>**User Experience (UX)**
 
@@ -1050,3 +1049,35 @@ By forking the GitHub Repository we can make a copy of the original repository t
 1. Log in to GitHub and locate [Coders Parkhouse](https://github.com/AleksandarJavorovic/coders-parkhouse)
 2. At the top, in the line with the project's name, on the right side find "Fork", click.
 3. Now you have a copy of the original repository in your GitHub account.
+
+## <a id="credits-aa"></a>**Credits**
+
+- I want to say to my wife:"Thank you for all your love and support."
+
+- I want to thank to my mentor Mitko Bachvarov for tips and suggestions.
+
+### **Content**
+
+- [Love Sandwiches](https://github.com/AleksandarJavorovic/love-sandwiches) project inspired me a lot.
+
+- [REGEX WITH EXAMPLES IN DETAIL](https://www.youtube.com/watch?v=9RksQ5YT7FM) contributed a lot to my understanding of regular expressions.
+
+- Sites which contributed to development of this application:
+
+  - [Regex representation for licence plate](https://stackoverflow.com/questions/19547061/regex-representation-for-licence-plate)
+
+  - [Python RegEx](https://www.w3schools.com/python/python_regex.asp)
+
+  - [Python program to find the String in a List](https://www.geeksforgeeks.org/python-program-to-find-the-string-in-a-list/)
+
+  - [Using variables from other functions in Python](https://stackoverflow.com/questions/35270256/using-variables-from-other-functions-in-python)
+
+  - [Python len() Function](https://www.w3schools.com/python/ref_func_len.asp)
+
+- Readme files which were used as inspiration:
+  - [Hacked Game](https://github.com/Shane-Donlon/pp3-hacked-game/blob/main/README.md)
+
+  - [Expense Tracker](https://github.com/Gkicks/expense-tracker/blob/main/README.md)
+
+  - [IT-Quiz](https://github.com/AleksandarJavorovic/portfolio-project-2/blob/main/README.md)
+  
