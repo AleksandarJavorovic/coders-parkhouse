@@ -27,6 +27,7 @@ Coders Parkhouse is a Python Terminal Application which should simulate a real l
 - [Time of Arrival](#time-of-arrival)
 - [Discount Code](#discount-code)
 - [Pay at Exit](#pay-at-exit)
+- [Further Improvements](#further-improvements)
 
 ### [**Technologies Used**](#technologies-used-aa)
 
