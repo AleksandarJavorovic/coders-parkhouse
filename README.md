@@ -689,5 +689,59 @@ Software used to validate the Pythone code is PEP8CI - Python Linter, mentioned 
     <td>Details loading...(if reg. number is present in the system)</td>
     <td>Confirmed</td>
   </tr>
+  <tr>
+    <td>Reg. Number Valid but not in system.(Yes/No)</td>
+    <td>!</td>
+    <td>Please answer with "yes" or "no".</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Reg. Number Valid but not in system.(Yes/No)</td>
+    <td>#</td>
+    <td>Please answer with "yes" or "no".</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Reg. Number Valid but not in system.(Yes/No)</td>
+    <td>123</td>
+    <td>Please answer with "yes" or "no".</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Reg. Number Valid but not in system.(Yes/No)</td>
+    <td>Any special character</td>
+    <td>Please answer with "yes" or "no".</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Reg. Number Valid but not in system.(Yes/No)</td>
+    <td>!yes</td>
+    <td>Please answer with "yes" or "no".</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Reg. Number Valid but not in system.(Yes/No)</td>
+    <td>No%</td>
+    <td>Please answer with "yes" or "no".</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Reg. Number Valid but not in system.(Yes/No)</td>
+    <td>+yes</td>
+    <td>Please answer with "yes" or "no".</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Reg. Number Valid but not in system.(Yes/No)</td>
+    <td>yes</td>
+    <td>We need your registration number please.</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Reg. Number Valid but not in system.(Yes/No)</td>
+    <td>no</td>
+    <td>Have a nice day! Until the next time!</td>
+    <td>Confirmed</td>
+  </tr>
 </tbody>
 </table>
