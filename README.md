@@ -240,3 +240,12 @@ At the entrance/exit you are being greeted and two options are being given to yo
 
   - After we pay, we are greeted again and we can freely exit the parking lot.
   - In this step program is deleting the info from our google sheet.
+
+### **Further Improvements**
+
+- Add coloring for Valid/Invalid inputs, green/red for example, for better UX(lack of time).
+- Improve system to track time automatically, which will eleminate need of the given 3 scenarios(earlie, on point, late).
+- Improve parking system to track real date/time(real life application).
+- Improve pricing system in case people want to leave their cars for a longer period of time and ajust prices. Maybe give some better options for those who want to park for a longer period(days, weeks...), since at the moment this option is simple number of hours and is unlimited(real life application).
+- Add cameras to replace manual input of registration number(real life application).
+- Add printer which will print out cards with the registration number, time and date. Those cards would be needed at the exit, at the payment process(real life application).
