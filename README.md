@@ -953,3 +953,90 @@ Software used to validate the Pythone code is PEP8CI - Python Linter, mentioned 
 
 - The only thing I can mention is that terminal which runs the code on the Heroku, is not responsible. It means if we reduce the width of the browser the terminal will get covered. That has nothing to do with the project itself.
 
+## <a id="deployment-and-local-development-aa"></a>**Deployment and local development**
+
+###  **Deploying to Heroku**
+
+1. Go to [Heroku](https://id.heroku.com/login), create account if you don't have and log in.
+
+2. Head to your dashboard nad click "New", then "Create new app"
+
+    <details>
+    <summary>New/CreateNewApp
+    </summary>
+              
+    ![New/CreateNewApp](/assets/images/deployment/step1-create-new-app.png)
+    </details>
+
+3. Next step is to give your app a name and to choose region. After that click on "Create app".
+
+    <details>
+    <summary>Name/Region/Create
+    </summary>
+              
+    ![Name/Region/Create](/assets/images/deployment/step2.png)
+    </details>
+
+4. After that head to "Settings" tab which you can find in the header of your Heroku page and under the "Config Vars" set your Key/Value Pairs.
+
+    <details>
+    <summary>CREDS/PORT
+    </summary>
+              
+    ![CREDS/PORT](/assets/images/deployment/step3.png)
+    </details>
+
+5. Then in the "Buildpacks" section you will need to add buildpacks. Pay attention to the order in which you add buildpacks you need. In my case I had to add Python first and nodejs second.
+
+    <details>
+    <summary>Buildpacks
+    </summary>
+              
+    ![Buildpacks](/assets/images/deployment/step4.png)
+    </details>
+
+6. First add "Python", by clicking on Python icon and then click on "Add Buildpack".
+
+    <details>
+    <summary>Python
+    </summary>
+              
+    ![Python](/assets/images/deployment/step5-python.png)
+    </details>
+
+7. Then add "nodejs", by clicking on nodejs icon and then click on "Add Buildpack".
+
+    <details>
+    <summary>nodejs
+    </summary>
+              
+    ![nodejs](/assets/images/deployment/step6-nodejs.png)
+    </details>
+
+8. Then head to "Deployment" tab which you can also find in the header of your Heroku page and under "Deployment method" click on "GitHub"(in my case that's where my repository is).
+
+    <details>
+    <summary>GitHub
+    </summary>
+              
+    ![GitHub](/assets/images/deployment/step7-github.png)
+    </details>
+
+9. After that, just under the "Deployment method" section is "Connect to GitHub" section where you need to find your repository and then click on "Connect".
+
+    <details>
+    <summary>Connect
+    </summary>
+              
+    ![Connect](/assets/images/deployment/step8.png)
+    </details>
+
+10. Just under "Connect to GitHub" section is "Automatic deploys" section where you can click on "Enable Automatic Deploys" if that's what you want and just under is "Manual Deploy" section, where you need to click on "Deploy Manually".
+
+    <details>
+    <summary>EnableAutomaticDeploys/DeployManually
+    </summary>
+              
+    ![EnableAutomaticDeploys/DeployManually](/assets/images/deployment/step9-deployment-type.png)
+    </details>
+
