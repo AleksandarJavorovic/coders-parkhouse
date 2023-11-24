@@ -1040,3 +1040,10 @@ Software used to validate the Pythone code is PEP8CI - Python Linter, mentioned 
     ![EnableAutomaticDeploys/DeployManually](/assets/images/deployment/step9-deployment-type.png)
     </details>
 
+### **Forking the GitHub Repository**
+
+By forking the GitHub Repository we can make a copy of the original repository to view or make changes without changing the original repository.
+
+1. Log in to GitHub and locate [Coders Parkhouse](https://github.com/AleksandarJavorovic/coders-parkhouse)
+2. At the top, in the line with the project's name, on the right side find "Fork", click.
+3. Now you have a copy of the original repository in your GitHub account.
