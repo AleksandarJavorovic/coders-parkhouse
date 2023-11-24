@@ -635,5 +635,59 @@ Software used to validate the Pythone code is PEP8CI - Python Linter, mentioned 
     <td>Ok, see ya later!</td>
     <td>Confirmed</td>
   </tr>
+  <tr>
+    <td>Reg. Number Input / Leaving parking lot</td>
+    <td>Empty space</td>
+    <td>Invalid data, please use correct pattern.</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Reg. Number Input / Leaving parking lot</td>
+    <td>123</td>
+    <td>Invalid data, please use correct pattern.</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Reg. Number Input / Leaving parking lot</td>
+    <td>#</td>
+    <td>Invalid data, please use correct pattern.</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Reg. Number Input / Leaving parking lot</td>
+    <td>Any special character</td>
+    <td>Invalid data, please use correct pattern.</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Reg. Number Input / Leaving parking lot</td>
+    <td>XY-__123__-XY</td>
+    <td>Invalid data, please use correct pattern.</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Reg. Number Input / Leaving parking lot</td>
+    <td>XY-123-XY</td>
+    <td>Registration number is valid but not in our system. Are you sure that you parked here?(if not present in the system)</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Reg. Number Input / Leaving parking lot</td>
+    <td>XYZ-1234-XY</td>
+    <td>Registration number is valid but not in our system. Are you sure that you parked here?(if not present in the system)</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Reg. Number Input / Leaving parking lot</td>
+    <td>XYZ-1234-XY</td>
+    <td>Details loading...(if reg. number is present in the system)</td>
+    <td>Confirmed</td>
+  </tr>
+  <tr>
+    <td>Reg. Number Input / Leaving parking lot</td>
+    <td>AA-123-BC</td>
+    <td>Details loading...(if reg. number is present in the system)</td>
+    <td>Confirmed</td>
+  </tr>
 </tbody>
 </table>
