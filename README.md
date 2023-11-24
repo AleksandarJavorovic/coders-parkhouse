@@ -158,7 +158,27 @@ At the entrance/exit you are being greeted and two options are being given to yo
 
 - After we come back to pick up our car, either by entering "return" at the end of our parking process or by restarting the program and we choose the option number two, to leave the parking lot, we need to enter our registrations again.
 - By entering our reg. number again, the system is checking if the reg. number is in the google sheet(did we park here at all).
+
 - ![Leaveing Parking Lot](/assets/images/features/feature13-regplatesleave.png)
+
+- Here we are going to have 2 options.
+- First one where the registration number is valid but car is not parked at our parking lot(not present in the google sheet).
+- Second option, where registration number is valid and is parked at our parking lot(is present in the google sheet).
+
+  - **Registration Not Existing**
+  - ![Registration Not Existing](/assets/images/features/feature20-valid-regplateleave-not-existing.png)
+  - Here we have 2 scenarios again, where the driver will be able to type in again the reg. number in case he made a typo or he can freely walk away in case he missed the parking lot(^_^).
+
+    - Re-enter the registration number
+    - ![Re-enter Reg Number](/assets/images/features/feature22-regplates-not-existing-yes.png)
+
+    - Walk away
+    - ![Walk Away](/assets/images/features/feature21-regplates-not-existing-no.png)
+  
+  - **Registration Existing**
+  - This will lead to details being loaded(we are loading info from the google sheet).
+  - ![Registration Existing](/assets/images/features/feature24.png)
+
 
 ### **Parking Details**
 
