@@ -80,7 +80,7 @@ Using of this application is pretty straight forward as it would be to use parki
   - Be kind to the customers.
   - Be able to offer small discount to the customers.
 
-## **Flowcharts**
+## <a id="flowcharts"></a>**Flowcharts**
 
 - **Initial Flowcharts**
 
@@ -250,3 +250,39 @@ At the entrance/exit you are being greeted and two options are being given to yo
 - Improve pricing system in case people want to leave their cars for a longer period of time and ajust prices. Maybe give some better options for those who want to park for a longer period(days, weeks...), since at the moment this option is simple number of hours and is unlimited(real life application).
 - Add cameras to replace manual input of registration number(real life application).
 - Add printer which will print out cards with the registration number, time and date. Those cards would be needed at the exit, at the payment process(real life application).
+
+## <a id="technologies-used-aa"></a>**Technologies Used**
+
+### **Languages Used**
+
+- Python
+- JavaScript (used by template creator)
+- HTML (used by template creator)
+
+### **Libraries**
+
+- [gspread](https://github.com/burnash/gspread)
+  - Google API for GoogleSheets.
+- [google.oauth2.service_account](https://developers.google.com/identity/protocols/oauth2/service-account)
+  - System used for server-to-server interactions.
+- [regex](https://docs.python.org/3/howto/regex.html)
+  - Regular Expression used for setting up patterns.
+
+### **Frameworks and Programs Used**
+
+- [Git](https://git-scm.com/)
+   - Used for version control, commit to Git and Push to GitHub.
+- [GitHub](https://github.com/)
+   - Used to store the code online and for deployment.
+- [Gitpod](https://www.gitpod.io/)
+   - Used for development as a cloud IDE.
+- [Heroku](https://id.heroku.com/login)
+  - Used to deploy the project.
+- [drawio](https://www.drawio.com/)
+  - Used to create Flowcharts.
+- [PEP8CI - Python Linter](https://pep8ci.herokuapp.com/)
+  - Used to validate Python code.
+- [Am I Responsive](https://ui.dev/amiresponsive)
+   - Used to create mockup image for the README file.
+- [Text to ASCII Art Generator](https://www.patorjk.com/software/taag/#p=display&f=Broadway%20KB&t=Coders%20Parkhouse)
+  - Used to create ASCII art for welcoming and farewell messages.
