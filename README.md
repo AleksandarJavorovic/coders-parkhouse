@@ -680,13 +680,13 @@ Software used to validate the Pythone code is PEP8CI - Python Linter, mentioned 
   <tr>
     <td>Reg. Number Input / Leaving parking lot</td>
     <td>XYZ-1234-XY</td>
-    <td>Details loading...(if reg. number is present in the system)</td>
+    <td>Valid Input! Details loading...(if reg. number is present in the system)</td>
     <td>Confirmed</td>
   </tr>
   <tr>
     <td>Reg. Number Input / Leaving parking lot</td>
     <td>AA-123-BC</td>
-    <td>Details loading...(if reg. number is present in the system)</td>
+    <td>Valid Input! Details loading...(if reg. number is present in the system)</td>
     <td>Confirmed</td>
   </tr>
   <tr>

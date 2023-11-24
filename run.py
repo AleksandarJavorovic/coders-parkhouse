@@ -213,6 +213,7 @@ def enter_regplate_leave():
     if (re.search(reg_plates_pattern, reg_plates)):  # cheking the pattern
         # checking if regplates are already present
         if reg_plates in existing_regplates:
+            print('\nValid Input!')
             print('\nDetails loading...\n')
             request_list(reg_plates)
         # regplates aren't present in the sheet
