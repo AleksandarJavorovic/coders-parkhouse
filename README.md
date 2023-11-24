@@ -946,3 +946,10 @@ Software used to validate the Pythone code is PEP8CI - Python Linter, mentioned 
           
     ![Linter No Errors](/assets/images/bugs/pattern-solution.png)
     </details>
+
+### **Known Bugs**
+
+- At the moment there are no known bugs.
+
+- The only thing I can mention is that terminal which runs the code on the Heroku, is not responsible. It means if we reduce the width of the browser the terminal will get covered. That has nothing to do with the project itself.
+
