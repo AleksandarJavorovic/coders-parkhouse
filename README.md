@@ -192,4 +192,17 @@ At the entrance/exit you are being greeted and two options are being given to yo
   - **No Code**
   - ![No Code](/assets/images/features/feature17-no-code.png)
 
+### **Pay at Exit**
 
+- In the end, we are prompted to pay the final price we got.
+- There will be 2 scenarios again, where we can choose between "pay" or anything else.
+- In order to exit the parking lot, we must choose "pay" in the end.
+
+  - **Not Wanting to Pay**
+  - ![Not Paying](/assets/images/features/feature19-leave-no-pay.png)
+
+  - **Pay**
+  - ![Paying](/assets/images/features/feature18-leave-paying.png)
+
+  - After we pay, we are greeted again and we can freely exit the parking lot.
+  - In this step program is deleting the info from our google sheet.
