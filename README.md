@@ -174,13 +174,22 @@ At the entrance/exit you are being greeted and two options are being given to yo
 
 - **Earlier/On Point**
   
-    - ![Details Loading](/assets/images/features/feature15-1.png)
+    - ![Earlier/On Point](/assets/images/features/feature15-1.png)
 
 - **Later**
 
-  - ![Details Loading](/assets/images/features/feature16-3.png)
+  - ![Later](/assets/images/features/feature16-3.png)
 
+### **Discount Code**
 
+- Suddenly the driver will be asked if he knows about the CI discount code, to get 10% off of the final price.
 
+- Here we will have two scenarios, where driver will know the code or he wouldn't. The Driver will be answered in a funny manner, according to the scenario.
+
+  - **With Code**
+  - ![With Code](/assets/images/features/feature23.png)
+
+  - **No Code**
+  - ![No Code](/assets/images/features/feature17-no-code.png)
 
 
