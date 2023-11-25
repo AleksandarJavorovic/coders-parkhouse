@@ -12,7 +12,7 @@ Coders Parkhouse is a Python Terminal Application which should simulate a real l
 
 - [User Stories](#user-stories)
 
-### [**Flowcharts**](#flowcharts)
+### [**Flowcharts**](#flowcharts-aa)
 
 ### [**Features**](#features-aa)
 
@@ -83,7 +83,7 @@ Using of this application is pretty straight forward as it would be to use parki
   - Be kind to the customers.
   - Be able to offer small discount to the customers.
 
-## <a id="flowcharts"></a>**Flowcharts**
+## <a id="flowcharts-aa"></a>**Flowcharts**
 
 - **Initial Flowcharts**
 
@@ -118,7 +118,7 @@ At the entrance/exit you are being greeted and two options are being given to yo
 
 ### **Park the car**
 
-- If you choose to park the car, the rules of the parking house are being displayed to you. You are also being asked if you accept to the terms of use, which you can accept or reject and search for a better place to park.
+- If you choose to park the car, the rules of the parking house are being displayed to you. You are also being asked if you agree to the terms of use, which you can accept or reject and search for a better place to park.
 - ![Rules](/assets/images/features/feature2-rules.png)
 
 - If you reject the terms of use, you will be greeted nicely.
@@ -132,21 +132,21 @@ At the entrance/exit you are being greeted and two options are being given to yo
 - Here you must enter your registration number but according to one of the four given patterns. Instructions are telling you to use letters, digits and dashes only, other characters will trigger Invalid Input.
 
 - In case you use valid pattern for your registration number, you can have 2 scenarios:
-  1. You type in valid registration number and you can go further to enter the parking duration.
+  - You type in valid registration number and you can go further to enter the parking duration.
   - ![Regplates Valid Not Existing](/assets/images/features/feature5-regplates-valid-not-existing-hours.png)
 
 
-  2. You type in valid registration number, but you find out there is a debt from the last time, which you need to take care of, so that you can park here again. Behind the scenes the code is checking if the given registration is already inside the google sheet. In this case it is which represents your "debt".
+  - You type in valid registration number, but you find out there is a debt from the last time, which you need to take care of, so that you can park here again. Behind the scenes the code is checking if the given registration is already inside the google sheet. In this case it is, which represents your "debt".
   - ![Regplates Valid Existing](/assets/images/features/feature8-regplate-existing.png)
 
 ### **Paying Debt/Actually Mistake**
 
-- You have 2 options here to pay your debt, to be able to park again or to type in your registration number again because actually it was a typo.
+- You have 2 options here, to pay your debt to be able to park again or to type in your registration number again because actually it was a typo.
 
-  1. If you choose to pay your debt, after the transaction is over, you will be able to enter your registration number again and park as you wish. In reality the reg. number is getting deleted from the google sheet, so you are able to enter with the same registration again.
+  - If you choose to pay your debt, after the transaction is over, you will be able to enter your registration number again and park as you wish. In reality the reg. number is getting deleted from the google sheet, so you are able to enter with the same registration again.
   - ![Regplates Valid Existing Paying](/assets/images/features/feature10-regplates-existing-pay.png)
 
-  2. If you actually made a mistake and you choose "new". You will be taken back to enter your registration number again.
+  - If you actually made a mistake and you choose "new". You will be taken back to enter your registration number again.
   - ![Regplates Valid Existing New](/assets/images/features/feature9-regplate-existing-no.png)
 
 ### **Parking Duration(Hours)**
@@ -157,22 +157,22 @@ At the entrance/exit you are being greeted and two options are being given to yo
 
 - In the background there is a list in program which holds the registration number, number of hours and price which is calculated according to the hours we enter.
 - Price is calculated as: Hours * 3euro
-- At this moment the list is being inserted into the google sheet.
+- At this moment the list is being inserted/written into the google sheet.
 - In this step the info about our parking is being presented to us.
 
 ### **Return/NotYet**
 
 - After we are presented with the info in the end, we have two options:
 
-  1. To leave, in this case we are typing in "not yet".
+  - To leave, in this case we are typing in "not yet".
   - ![Not Yet](/assets/images/features/feature11-not-yet.png)
 
-  2. Second option is to type in "return", to get back to the parking lot to pick up our car. It brings us to the beginning of our application.
+  - Second option is to type in "return", to get back to the parking lot to pick up our car. It brings us to the beginning of our application.
   - ![Return](/assets/images/features/feature12-return.png)
 
 ### **Leave Parking Lot**
 
-- After we come back to pick up our car, either by entering "return" at the end of our parking process or by restarting the program and we choose the option number two, to leave the parking lot, we need to enter our registrations again.
+- After we come back to pick up our car, either by entering "return" at the end of our parking process or by restarting the program and we choose the option number two, to leave the parking lot, we need to enter our registration number again.
 - By entering our reg. number again, the system is checking if the reg. number is in the google sheet(did we park here at all).
 
 - ![Leaveing Parking Lot](/assets/images/features/feature13-regplatesleave.png)
@@ -183,10 +183,10 @@ At the entrance/exit you are being greeted and two options are being given to yo
 
   - **Registration Not Existing**
   - ![Registration Not Existing](/assets/images/features/feature20-valid-regplateleave-not-existing.png)
-  - Here we have 2 scenarios again, where the driver will be able to type in again the reg. number in case he made a typo or he can freely walk away in case he missed the parking lot(^_^).
+  - Here we have 2 scenarios again, where the driver will be able to type in the reg. number again in case he made a typo or he can freely walk away in case he missed the parking lot(^_^).
 
     - Re-enter the registration number
-      - I you type in "yes".
+      - If you type in "yes".
       - ![Re-enter Reg Number](/assets/images/features/feature22-regplates-not-existing-yes.png)
 
     - Walk away
@@ -250,7 +250,7 @@ At the entrance/exit you are being greeted and two options are being given to yo
 - Add coloring for Valid/Invalid inputs, green/red for example, for better UX(lack of time).
 - Improve system to track time automatically, which will eleminate need of the given 3 scenarios(earlie, on point, late).
 - Improve parking system to track real date/time(real life application).
-- Improve pricing system in case people want to leave their cars for a longer period of time and ajust prices. Maybe give some better options for those who want to park for a longer period(days, weeks...), since at the moment this option is simple number of hours and is unlimited(real life application).
+- Improve pricing system in case people want to leave their cars for a longer period of time. Maybe give some better options for those who want to park for a longer period(days, weeks...), since at the moment this option is simple number of hours and is unlimited(real life application).
 - Add cameras to replace manual input of registration number(real life application).
 - Add printer which will print out cards with the registration number, time and date. Those cards would be needed at the exit, at the payment process(real life application).
 
@@ -961,7 +961,7 @@ Software used to validate the Pythone code is PEP8CI - Python Linter, mentioned 
 
 1. Go to [Heroku](https://id.heroku.com/login), create account if you don't have and log in.
 
-2. Head to your dashboard nad click "New", then "Create new app"
+2. Head to your dashboard and click "New", then "Create new app"
 
     <details>
     <summary>New/CreateNewApp
@@ -979,7 +979,7 @@ Software used to validate the Pythone code is PEP8CI - Python Linter, mentioned 
     ![Name/Region/Create](/assets/images/deployment/step2.png)
     </details>
 
-4. After that head to "Settings" tab which you can find in the header of your Heroku page and under the "Config Vars" set your Key/Value Pairs.
+4. After that head to "Settings" tab which you can find on top of your Heroku page and under the "Config Vars" set your Key/Value Pairs.
 
     <details>
     <summary>CREDS/PORT
@@ -1015,7 +1015,7 @@ Software used to validate the Pythone code is PEP8CI - Python Linter, mentioned 
     ![nodejs](/assets/images/deployment/step6-nodejs.png)
     </details>
 
-8. Then head to "Deployment" tab which you can also find in the header of your Heroku page and under "Deployment method" click on "GitHub"(in my case that's where my repository is).
+8. Then head to "Deployment" tab which you can also find on top of your Heroku page and under "Deployment method" click on "GitHub"(in my case that's where my repository is).
 
     <details>
     <summary>GitHub
@@ -1058,7 +1058,7 @@ By forking the GitHub Repository we can make a copy of the original repository t
 
 ### **Content**
 
-- [Love Sandwiches](https://github.com/AleksandarJavorovic/love-sandwiches) project inspired me a lot.
+- [Love Sandwiches](https://github.com/AleksandarJavorovic/love-sandwiches) project inspired me to include google sheets.
 
 - [REGEX WITH EXAMPLES IN DETAIL](https://www.youtube.com/watch?v=9RksQ5YT7FM) contributed a lot to my understanding of regular expressions.
 
